@@ -1,8 +1,6 @@
 "use client";
 import { useEffect } from "react";
 import Image from "next/image";
-
-import { Avatar } from "@nextui-org/avatar";
 // import { Button } from "@nextui-org/button";
 import { Card, CardBody } from "@nextui-org/card";
 import { Tooltip } from "@nextui-org/tooltip";
@@ -35,10 +33,12 @@ export default function About() {
     <div className="grid grid-rows-8 grid-cols-4 lg:grid-cols-3 gap-5">
       <Card className="col-span-full lg:row-start-2 lg:row-span-2 lg:col-start-2 lg:col-span-1">
         <CardBody className="flex-col items-center justify-center gap-2">
-          <Avatar
-            name="LM"
-            src="https://res.cloudinary.com/dbzv9xfjp/image/upload/v1700603685/portfolio/avatar-profile_lb9hd9.jpg"
-            className="w-24 h-24 text-large brightness-90"
+          <Image
+            src="/salam.jpg"
+            alt="Sodiq photo"
+            width={90}
+            height={90}
+            className="w-24 h-24 text-large brightness-90 rounded-full object-cover"
           />
           <h1 className="text-4xl font-bold">{fullName}</h1>
 
@@ -77,10 +77,7 @@ export default function About() {
 
           <div className="flex flex-wrap justify-center lg:justify-center gap-x-10 gap-y-6">
             {techonologyIconList.map(({ name, icon }: iconType) => (
-              <Tooltip
-                key={`technology-item-${name}`}
-                content={name}
-              >
+              <Tooltip key={`technology-item-${name}`} content={name}>
                 <IconComponent icon={icon} />
                 {/* <Chip variant="flat">{name}</Chip> */}
               </Tooltip>
@@ -92,9 +89,9 @@ export default function About() {
       {/* vertical img */}
       <div className="hidden lg:block lg:row-start-1 lg:row-span-2 lg:col-start-3  lg:h-[350px] rounded-xl relative opacity-0 mobile-animation verticalImage">
         <Image
-          src="https://images.unsplash.com/photo-1502581827181-9cf3c3ee0106?q=80&w=1576&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="/salam.jpg"
           priority={true}
-          alt="profile image"
+          alt="Sodiq photo"
           fill
           style={{
             width: "100%",
@@ -118,11 +115,7 @@ export default function About() {
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path
-            stroke="none"
-            d="M0 0h24v24H0z"
-            fill="none"
-          ></path>
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
           <path d="M4 16l6 -7l5 5l5 -6"></path>
           <path d="M15 14m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
           <path d="M10 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
