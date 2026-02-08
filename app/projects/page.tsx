@@ -5,7 +5,7 @@ import { Project } from "../components/Project";
 export default function Projects() {
   return (
     <section className="p-4 pb-0 max-w-6xl m-auto overflow-hidden 2xl:overflow-visible">
-      <div className="flex flex-col gap-0">
+      <div className="flex flex-col gap-0 -space-y-8">
         {ProjectList.map((project: ProjectType) => (
           <Project key={`project-item-${project.title}`} {...project} />
         ))}
