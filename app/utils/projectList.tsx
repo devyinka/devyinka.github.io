@@ -58,7 +58,7 @@ export const ProjectList: ProjectType[] = [
     imgUrl: "/videos/shadcn-landing-page.webp",
     videoUrl: "/videos/Smart_Attendance.mp4",
     githubUrl: "https://github.com/devyinka/NihubAttendance",
-    websiteUrl: "",
+    websiteUrl: "https://nihub-attendance-vnqh.vercel.app/",
   },
   {
     icon: <MagentaKitchenSVG />,
