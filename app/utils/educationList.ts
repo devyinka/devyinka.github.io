@@ -8,7 +8,7 @@ export const educationList: educationType[] = [
       "Built complex, deployable applications from scratch. Focused on modern web architecture, database management, and best practices in software design.",
   },
   {
-    career: "B.Eng. in Telecommunication Engineering",
+    career: "Telecommunication Engineering Student",
     years: "2021 - Present",
     description:
       "Federal University of Technology Minna, Niger State, Nigeria.",
