@@ -9,11 +9,7 @@ import {
   ReactHookFormSVG,
   ReactnativeSVG,
   ReactSVG,
-  SassSVG,
   SmartAttendanceSVG,
-  ShopApiSVG,
-  Sk8terSVG,
-  SwaggerSVG,
   TailwindSVG,
   TypescriptSVG,
 } from "../components/ui/icons";
@@ -103,7 +99,7 @@ export const ProjectList: ProjectType[] = [
         icon: <ReactSVG color="#61DAFB" size={16} />,
       },
       {
-        name: "CSS Modules",
+        name: "CSS",
         icon: <CSSSVG color="#1572B6" size={16} />,
       },
     ],
