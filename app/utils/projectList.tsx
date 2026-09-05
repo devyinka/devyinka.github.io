@@ -10,13 +10,55 @@ import {
   ReactnativeSVG,
   ReactSVG,
   SmartAttendanceSVG,
+  MultimodalAttendanceSVG,
   TailwindSVG,
   TypescriptSVG,
+  PostgreSQLSVG,
+  SupabaseSVG,
 } from "../components/ui/icons";
 import { ProjectType } from "../types";
 import { NextSVG } from "../components/ui/icons/index";
 
 export const ProjectList: ProjectType[] = [
+  {
+    icon: <MultimodalAttendanceSVG />,
+    title: "Biometric Attendance System",
+    subtitle: "Blockchain-based with offline capabilities",
+    technologies: [
+      {
+        name: "Next js",
+        icon: <NextSVG color="#61DAFB" size={16} />,
+      },
+      {
+        name: "Typescript",
+        icon: <TypescriptSVG color="#3178C6" size={16} />,
+      },
+      {
+        name: "Tailwind",
+        icon: <TailwindSVG color="#000000" size={16} />,
+      },
+      {
+        name: "Express",
+        icon: <ExpressSVG color="#06B6D4" size={16} />,
+      },
+      {
+        name: "postgreSQL",
+        icon: <PostgreSQLSVG color="#06B6D4" size={16} />,
+      },
+      {
+        name: "supabase",
+        icon: <SupabaseSVG />,
+      },
+    ],
+    description:
+      "A full‑stack biometric attendance system that combines fingerprint and facial recognition with blockchain‑based verification. Students mark attendance via ESP32‑powered kiosks, which automatically sync offline logs when connectivity is restored. The platform uses Solana blockchain to generate immutable, tamper‑proof hashes for every attendance record, ensuring verifiable proof of attendance. Lecturers can start live sessions, monitor attendance in real time, and export semester reports. Students can view their attendance history, download blockchain receipts, and verify their records on the Solana explorer. Role‑based access control ensures administrators have full management capabilities, while lecturers and students have tailored permissions.",
+    imgUrl:
+      "https://res.cloudinary.com/dnowbob2t/image/upload/v1788622286/multimodal_attendance_login_page_pupdic.png",
+    videoUrl:
+      "https://res.cloudinary.com/dnowbob2t/video/upload/v1788621039/BioAttend_Biometric_Attendance___Computer_Engineering_FUTMINNA_-_5_September_2026_xcrcqj.mp4",
+    githubUrl: "https://github.com/MadMax-source/biometric-attendace-web",
+    websiteUrl: "https://cpe-attendance-prototype.vercel.app/",
+  },
   {
     icon: <SmartAttendanceSVG />,
     title: "Smart QR Event Logistics Platform",
@@ -112,5 +154,3 @@ export const ProjectList: ProjectType[] = [
     websiteUrl: "",
   },
 ];
-
-//https://recipe-app-m3vn.vercel.app

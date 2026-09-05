@@ -6,6 +6,7 @@ export * from "./PythonSVG";
 export * from "./PostgreSQLSVG";
 export * from "./CplusplusSVG";
 export * from "./FigmaSVG";
+export * from "./SupabaseSVG";
 
 type IconType = { color: string; size: number };
 
