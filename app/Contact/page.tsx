@@ -26,7 +26,7 @@ export default function Contact() {
             Get In Touch
           </h1>
           <p className="text-slate-400 mt-4 text-lg">
-            Let's discuss networking, backend architecture, or your next
+            Let&apos;s discuss networking, backend architecture, or your next
             engineering role.
           </p>
         </div>

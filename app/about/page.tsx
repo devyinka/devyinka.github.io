@@ -1,10 +1,9 @@
 "use client";
 import { useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
-import { techonologyIconList, educationList } from "@/utils";
-import { iconType, educationType } from "@/types";
+import { educationList } from "@/utils";
+import { educationType } from "@/types";
 
 export default function About() {
   return (
@@ -34,18 +33,15 @@ export default function About() {
               years, I have architected secure backend pipelines (Node.js,
               PostgreSQL), developed cross-platform mobile apps, and integrated
               edge IoT devices using ESP32 microcontrollers and real-time MQTT
-              protocols. While I actively build APIs and mobile experiences, my
-              ultimate trajectory is Networking and Cyber Security. I don't just
-              want to build scalable applications; my focus is on engineering
-              the secure network infrastructures that keep those applications,
-              and their data, completely safe
+              protocols.
             </p>
             <p>
-              Now, my trajectory is strictly focused on{" "}
+              While I actively build APIs and mobile experiences, my trajectory
+              is strictly focused on{" "}
               <span className="text-cyan-400 font-medium">
                 Networking and Cyber Security
               </span>
-              . I build systems that don't just work—they remain secure,
+              . I build systems that don&apos;t just work—they remain secure,
               scalable, and resilient from the physical edge device all the way
               to the cloud database.
             </p>

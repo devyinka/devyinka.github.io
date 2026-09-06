@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import Providers from "./providers";
-import { NavbarSection } from "@/components/ui/Navbar";
-const inter = Inter({ subsets: ["latin"] });
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "devyinka",
-  description: "devyinka | Frontend developer portfolio",
+  title: "Salam Sodiq | devyinka",
+  description: "Backend Systems, Mobile & Cyber Security Engineer",
 };
 
 export default function RootLayout({
@@ -18,13 +13,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <main className="dark text-foreground bg-background min-h-screen">
-          <NavbarSection />
-          <Providers>{children}</Providers>
-          <Analytics />
-        </main>
-      </body>
+      {/* Removed the Inter font, using standard Tailwind fonts instead */}
+      <body className="bg-[#0a0a0a] text-slate-300 font-sans">{children}</body>
     </html>
   );
 }
