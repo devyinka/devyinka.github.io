@@ -9,9 +9,9 @@ export const educationList: educationType[] = [
   },
   {
     career: "B.Eng. in Telecommunication Engineering",
-    years: "2021 – 2026 (Expected)",
+    years: "2021 – 2026",
     description:
-      "Federal University of Technology, Minna, Niger State. GPA: 4.2/5.0 (second class honour, upper division). Coursework: Data Structures, Digital Signal Processing, Wireless Networks.",
+      "Federal University of Technology, Minna, Niger State. GPA: 4.2/5.0.",
   },
   {
     career: "Frontend Web Development",
