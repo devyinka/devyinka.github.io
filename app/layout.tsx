@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import Providers from "./providers";
-import { NavbarSection } from "./components/ui/Navbar";
+import { NavbarSection } from "@/components/ui/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 import "./globals.css";
 

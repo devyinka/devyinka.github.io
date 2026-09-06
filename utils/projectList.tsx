@@ -4,9 +4,9 @@ import {
   JavascriptSVG,
   MagentaKitchenSVG,
   MongoDBSVG,
-  MongooseSVG,
-  PrimeReactSVG,
-  ReactHookFormSVG,
+  MongooseSVG, // kept in case you need it later
+  PrimeReactSVG, // kept in case you need it later
+  ReactHookFormSVG, // kept in case you need it later
   ReactnativeSVG,
   ReactSVG,
   SmartAttendanceSVG,
@@ -15,23 +15,25 @@ import {
   TypescriptSVG,
   PostgreSQLSVG,
   SupabaseSVG,
+  FastAPISVG,
+  PythonSVG,
+  NextSVG,
 } from "../components/ui/icons";
 import { ProjectType } from "../types";
-import { NextSVG } from "../components/ui/icons/index";
 
 export const ProjectList: ProjectType[] = [
   {
     icon: <MultimodalAttendanceSVG />,
     title: "Biometric Attendance System",
-    subtitle: "Blockchain-based with offline capabilities",
+    subtitle: "Hardware-to-Cloud & Blockchain Verification",
     technologies: [
-      {
-        name: "Next js",
-        icon: <NextSVG color="#61DAFB" size={16} />,
-      },
       {
         name: "Typescript",
         icon: <TypescriptSVG color="#3178C6" size={16} />,
+      },
+      {
+        name: "Next js",
+        icon: <NextSVG color="#61DAFB" size={16} />,
       },
       {
         name: "Tailwind",
@@ -49,9 +51,17 @@ export const ProjectList: ProjectType[] = [
         name: "supabase",
         icon: <SupabaseSVG />,
       },
+      {
+        name: "python",
+        icon: <PythonSVG color="#3776AB" size={35} />,
+      },
+      {
+        name: "FastAPI",
+        icon: <FastAPISVG />,
+      },
     ],
     description:
-      "A full‑stack biometric attendance system that combines fingerprint and facial recognition with blockchain‑based verification. Students mark attendance via ESP32‑powered kiosks, which automatically sync offline logs when connectivity is restored. The platform uses Solana blockchain to generate immutable, tamper‑proof hashes for every attendance record, ensuring verifiable proof of attendance. Lecturers can start live sessions, monitor attendance in real time, and export semester reports. Students can view their attendance history, download blockchain receipts, and verify their records on the Solana explorer. Role‑based access control ensures administrators have full management capabilities, while lecturers and students have tailored permissions.",
+      "Architected a secure backend pipeline for a biometric attendance system. Integrated ESP32 edge devices via MQTT with a robust Express/PostgreSQL backend. Implemented Role-Based Access Control (RBAC) for admins and lecturers, offline synchronization capabilities, and leveraged Solana blockchain for immutable, tamper-proof attendance receipts.",
     imgUrl:
       "https://res.cloudinary.com/dnowbob2t/image/upload/v1788622286/multimodal_attendance_login_page_pupdic.png",
     videoUrl:
@@ -62,13 +72,12 @@ export const ProjectList: ProjectType[] = [
   {
     icon: <SmartAttendanceSVG />,
     title: "Smart QR Event Logistics Platform",
-    subtitle: "Landing page template",
+    subtitle: "Scalable Event Management API",
     technologies: [
       {
         name: "Next js",
         icon: <NextSVG color="#61DAFB" size={16} />,
       },
-
       {
         name: "Javascript",
         icon: <JavascriptSVG color="#3178C6" size={16} />,
@@ -91,18 +100,17 @@ export const ProjectList: ProjectType[] = [
       },
     ],
     description:
-      "A full-stack event attendance system where students can register for multiple events with enforced track constraints. The platform uses QR codes for attendance tracking and implements role-based access control, allowing super admins to manage events and administrators while limiting sub-admins to attendance scanning.",
+      "Developed the backend infrastructure for a large-scale event logistics platform. Engineered a MongoDB database schema to enforce track constraints and handle concurrent QR code scans. Implemented secure role-based routing and authentication, allowing super-admins full oversight while restricting sub-admins to isolated attendance endpoints.",
     imgUrl: "/videos/SmartAttendanceNew.PNG",
     videoUrl:
       "https://res.cloudinary.com/dnowbob2t/video/upload/Create_Next_App_-_17_February_2026_sr9lsm.mp4?_s=vp-3.7.2",
     githubUrl: "https://github.com/devyinka/NihubAttendance",
     websiteUrl: "https://nihub-attendance-vnqh.vercel.app",
   },
-
   {
     icon: <MagentaKitchenSVG />,
-    title: "Restuarant Locator",
-    subtitle: "Restaurant finder",
+    title: "Restaurant Locator",
+    subtitle: "React Native & Geolocation Integration",
     technologies: [
       {
         name: "React native",
@@ -112,14 +120,13 @@ export const ProjectList: ProjectType[] = [
         name: "Express",
         icon: <ExpressSVG color="#000" size={16} />,
       },
-
       {
         name: "MongoDB",
         icon: <MongoDBSVG color="#1572B6" size={16} />,
       },
     ],
     description:
-      "A Full-Stack React Native app that helps users find restaurants around a specific location by entering a place name. It fetches location coordinates using TomTom API and identifies nearby restaurants with Node Geocoder, displaying ratings, open/closed status, and other helpful details. The app features secure user authentication using Firebase, enabling users to create accounts, save favorite restaurants, and personalize their dining preferences seamlessly across devices.",
+      "Engineered a cross-platform React Native application focused on performant API integration. Connected TomTom geolocation services with Node Geocoder for precise coordinate mapping. Built a secure user authentication flow via Firebase, optimizing database queries to sync users' saved locations seamlessly across devices.",
     imgUrl: "/videos/Restuarantnew.PNG",
     videoUrl:
       "https://res.cloudinary.com/daauphnqb/video/upload/v1770652825/Restuarantnew_el3esg.mp4",
@@ -130,7 +137,7 @@ export const ProjectList: ProjectType[] = [
   {
     icon: <MagentaKitchenSVG />,
     title: "Food Ingredient Finder",
-    subtitle: "Recipe Finder",
+    subtitle: "Client-Side API Integration",
     technologies: [
       {
         name: "JavaScript",
@@ -146,7 +153,7 @@ export const ProjectList: ProjectType[] = [
       },
     ],
     description:
-      "A React recipe discovery web application that allows users to search for meals and view ingredients and cooking instructions through a clean and intuitive interface..",
+      "Developed a React-based recipe discovery engine that interfaces with external REST APIs to aggregate complex meal data. Optimized client-side state management and implemented dynamic search algorithms to filter and render extensive ingredient lists efficiently.",
     imgUrl: "/videos/Recipe-finder.PNG",
     videoUrl:
       "https://res.cloudinary.com/daauphnqb/video/upload/v1770652915/Recipe-finder_ofvdno.mp4",

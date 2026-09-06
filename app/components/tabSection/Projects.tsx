@@ -1,6 +1,6 @@
 import { ProjectList } from "@/app/utils";
 import { ProjectType } from "@/app/types";
-import { Project } from "../Project";
+import { Project } from "./Projects";
 
 export const Projects = () => {
   return (

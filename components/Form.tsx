@@ -8,7 +8,7 @@ import { Toaster } from "sonner";
 import { toast } from "sonner";
 
 import { CircleCheckSVG, CircleXSVG } from "./ui/icons";
-import { contactData } from "@/app/utils";
+import { contactData } from "@/utils";
 
 export const Form = () => {
   const { whatsapp } = contactData;

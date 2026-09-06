@@ -23,7 +23,7 @@ const routes: routeProps[] = [
   },
   {
     label: "Contact",
-    url: "/contact",
+    url: "/Contact",
   },
 ];
 
