@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { NavbarSection } from "@/components/ui/Navbar";
 
 export const metadata: Metadata = {
   title: "Salam Sodiq | devyinka",
@@ -13,8 +14,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* Removed the Inter font, using standard Tailwind fonts instead */}
-      <body className="bg-[#0a0a0a] text-slate-300 font-sans">{children}</body>
+      <body className="bg-[#0a0a0a] text-slate-300 font-sans relative">
+        {/* Floating Navbar locked to the top center */}
+        <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
+          <div className="pointer-events-auto">
+            <NavbarSection />
+          </div>
+        </header>
+
+        {/* Main Content with top padding so it clears the fixed navbar */}
+        <main className="pt-28">{children}</main>
+      </body>
     </html>
   );
 }

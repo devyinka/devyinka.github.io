@@ -6,6 +6,7 @@ import { motion, useInView } from "framer-motion";
 import { whoAmIData, techonologyIconList, educationList } from "@/utils";
 import { iconType, educationType } from "@/types";
 import { Tooltip } from "@nextui-org/tooltip";
+import TabMenu from "../ui/TabMenu";
 
 const slideUp = {
   hidden: { opacity: 0, y: 30 },
