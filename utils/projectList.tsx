@@ -105,7 +105,7 @@ export const ProjectList: ProjectType[] = [
     videoUrl:
       "https://res.cloudinary.com/dnowbob2t/video/upload/Create_Next_App_-_17_February_2026_sr9lsm.mp4?_s=vp-3.7.2",
     githubUrl: "https://github.com/devyinka/NihubAttendance",
-    websiteUrl: "https://nihub-attendance-vnqh.vercel.app",
+    websiteUrl: "https://www.nihubattendance.tech/",
   },
   {
     icon: <MagentaKitchenSVG />,
