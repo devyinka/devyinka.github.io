@@ -106,7 +106,7 @@ export const ProjectList: ProjectType[] = [
     description:
       "Architected a secure backend pipeline for a biometric attendance system. Integrated ESP32 edge devices via MQTT with a robust Express/PostgreSQL backend. Implemented Role-Based Access Control (RBAC) for admins and lecturers, offline synchronization capabilities, and leveraged Solana blockchain for immutable, tamper-proof attendance receipts.",
     imgUrl:
-      "https://res.cloudinary.com/dnowbob2t/image/upload/v1788622286/multimodal_attendance_login_page_pupdic.png",
+      "https://res.cloudinary.com/dnowbob2t/image/upload/v1788939080/multimodal_attendance_login_page_pupdic.jpg",
     videoUrl:
       "https://res.cloudinary.com/dnowbob2t/video/upload/v1788621039/BioAttend_Biometric_Attendance___Computer_Engineering_FUTMINNA_-_5_September_2026_xcrcqj.mp4",
     githubUrl: "https://github.com/MadMax-source/biometric-attendace-web",
