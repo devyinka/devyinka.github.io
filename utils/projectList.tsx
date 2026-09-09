@@ -59,6 +59,7 @@ export const ProjectList: ProjectType[] = [
       "Engineered an end-to-end IoT and machine learning system for early pest and disease detection in bean farming. Integrated an ESP32 with environmental and soil sensors, developed a backend pipeline for processing field data, and implemented Random Forest classification for detecting bean aphids and anthracnose risks. Added real-time alerts and remote control of pesticide or fungicide spraying through a web-based dashboard.",
     imgUrl:
       "https://res.cloudinary.com/dnowbob2t/image/upload/v1788935495/pest_eefqpj.jpg",
+    //  "/videos/pest.jpg",
     videoUrl:
       "https://res.cloudinary.com/dnowbob2t/video/upload/v1788936538/pest_and_disase_detection_euwlhp.mp4",
     githubUrl: "https://github.com/devyinka/Beans-farm-pest-disease-monitoring",
@@ -143,7 +144,8 @@ export const ProjectList: ProjectType[] = [
     ],
     description:
       "Developed the backend infrastructure for a large-scale event logistics platform. Engineered a MongoDB database schema to enforce track constraints and handle concurrent QR code scans. Implemented secure role-based routing and authentication, allowing super-admins full oversight while restricting sub-admins to isolated attendance endpoints.",
-    imgUrl: "/videos/SmartAttendanceNew.PNG",
+    imgUrl:
+      "https://res.cloudinary.com/dnowbob2t/image/upload/v1788937872/SmartAttendanceNew_wnqr1n.png",
     videoUrl:
       "https://res.cloudinary.com/dnowbob2t/video/upload/Create_Next_App_-_17_February_2026_sr9lsm.mp4?_s=vp-3.7.2",
     githubUrl: "https://github.com/devyinka/NihubAttendance",
@@ -169,7 +171,8 @@ export const ProjectList: ProjectType[] = [
     ],
     description:
       "Engineered a cross-platform React Native application focused on performant API integration. Connected TomTom geolocation services with Node Geocoder for precise coordinate mapping. Built a secure user authentication flow via Firebase, optimizing database queries to sync users' saved locations seamlessly across devices.",
-    imgUrl: "/videos/Restuarantnew.PNG",
+    imgUrl:
+      "https://res.cloudinary.com/dnowbob2t/image/upload/v1788937870/Restuarantnew_ger3a2.png",
     videoUrl:
       "https://res.cloudinary.com/daauphnqb/video/upload/v1770652825/Restuarantnew_el3esg.mp4",
     githubUrl: "https://github.com/devyinka/Restaurant-finder",
@@ -196,7 +199,8 @@ export const ProjectList: ProjectType[] = [
     ],
     description:
       "Developed a React-based recipe discovery engine that interfaces with external REST APIs to aggregate complex meal data. Optimized client-side state management and implemented dynamic search algorithms to filter and render extensive ingredient lists efficiently.",
-    imgUrl: "/videos/Recipe-finder.PNG",
+    imgUrl:
+      "https://res.cloudinary.com/dnowbob2t/image/upload/v1788937871/Recipe-finder_zunrig.png",
     videoUrl:
       "https://res.cloudinary.com/daauphnqb/video/upload/v1770652915/Recipe-finder_ofvdno.mp4",
     githubUrl: "https://github.com/devyinka/Recipe-App",

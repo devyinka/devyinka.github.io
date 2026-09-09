@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 
@@ -23,7 +23,7 @@ export default function Projects() {
           </p>
         </div>
 
-        {/* FIX: Using project.title as the unique key instead of the index */}
+        {/* Using project.title as the unique key */}
         {ProjectList.map((project, index) => (
           <ProjectCard
             key={`project-${project.title.replace(/\s+/g, "-")}`}
@@ -66,12 +66,30 @@ const ProjectCard = ({
     githubUrl,
     websiteUrl,
   } = project;
+
   const ref = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null); // Ref for controlling the video
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   // Alternate the layout based on whether the index is even or odd
   const isEven = index % 2 === 0;
+
+  // Handle the delayed video playback
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
+    if (isInView && videoRef.current) {
+      // 6000ms = 6 seconds. Change to 10000 for 10 seconds.
+      timeout = setTimeout(() => {
+        videoRef.current?.play().catch((err) => {
+          console.log("Playback failed:", err);
+        });
+      }, 6000);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [isInView]);
 
   return (
     <motion.div
@@ -84,8 +102,8 @@ const ProjectCard = ({
       {/* Video/Image Section */}
       <div className="w-full lg:w-1/2 relative group rounded-2xl overflow-hidden border border-slate-800 bg-slate-900/50 aspect-video shadow-[0_0_40px_-15px_rgba(6,182,212,0.15)]">
         <video
+          ref={videoRef}
           className="h-full w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-          autoPlay
           loop
           muted
           playsInline
