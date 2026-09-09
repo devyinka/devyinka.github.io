@@ -59,7 +59,8 @@ export const ProjectList: ProjectType[] = [
       "Engineered an end-to-end IoT and machine learning system for early pest and disease detection in bean farming. Integrated an ESP32 with environmental and soil sensors, developed a backend pipeline for processing field data, and implemented Random Forest classification for detecting bean aphids and anthracnose risks. Added real-time alerts and remote control of pesticide or fungicide spraying through a web-based dashboard.",
     imgUrl:
       "https://res.cloudinary.com/dnowbob2t/image/upload/v1788935495/pest_eefqpj.jpg",
-    videoUrl: "",
+    videoUrl:
+      "https://res.cloudinary.com/dnowbob2t/video/upload/v1788936538/pest_and_disase_detection_euwlhp.mp4",
     githubUrl: "https://github.com/devyinka/Beans-farm-pest-disease-monitoring",
     websiteUrl: "https://beans-farm-pest-disease-monitoring.vercel.app",
   },
