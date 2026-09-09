@@ -2,8 +2,11 @@ import { whoAmIDataType } from "../types/whoAmIData";
 
 export const whoAmIData: whoAmIDataType = {
   fullName: "Salam Sodiq",
-  profession: "Backend Systems & Mobile Engineer",
+
+  profession: "Full-Stack Software Developer",
+
   whoAmI:
-    "A Telecommunication Engineering graduate and a full-stack software-developer focused on robust backend architecture and cross-platform mobile apps. From optimizing databases and building Node.js APIs to designing real-time IoT sensor networks, I bridge the gap between physical hardware and digital interfaces. As I expand into Networking and Cyber Security, my priority is engineering secure, resilient data pipelines from the edge to the cloud.",
-  quote: "Hardware meets software. Scale meets security.",
+    "I build full-stack web and mobile applications with a strong focus on reliable, security-conscious software. I work with React, Next.js, Node.js, Express, and modern databases while expanding my skills in ethical hacking and penetration testing. My Telecommunication Engineering background also gives me a strong foundation in networking, IoT, and connected systems.",
+
+  quote: "Building software with a systems and security mindset.",
 };

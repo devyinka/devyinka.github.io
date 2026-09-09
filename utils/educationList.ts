@@ -1,15 +1,16 @@
-import { educationType } from "../types";
+import { educationType } from "@/types";
 
 export const educationList: educationType[] = [
   {
-    career: "Full‑Stack & Mobile Developer (Self‑Taught)",
-    years: "2023 – Present",
-    description: "Built 15+ production‑ready applications",
+    title: "Telecommunication Engineering (B.Eng)",
+    subtitle: "Federal University of Technology, Minna (2021 – 2026)",
+    description:
+      "Graduated with a 4.2 CGPA. Mastered network infrastructure, setting the foundation for secure systems architecture.",
   },
   {
-    career: "B.Eng. in Telecommunication Engineering",
-    years: "2021 – 2026",
+    title: "Full-Stack & Mobile Developer",
+    subtitle: "Self-Taught & Industrial Training (2023 – Present)",
     description:
-      "Federal University of Technology, Minna, Niger State. GPA: 4.2/5.0.",
+      "Learned C/C++ before mastering the modern web stack (React, Next.js, Node.js) and React Native. Awarded 'Best Student' of my track during IT.",
   },
 ];
