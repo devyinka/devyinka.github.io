@@ -18,6 +18,7 @@ import {
   CSSSVG,
   HTMLSVG,
 } from "../components/ui/icons";
+import { FastAPISVG } from "../components/ui/icons";
 
 let color: string = "#9ca3af";
 export const techonologyIconList: iconType[] = [
@@ -76,6 +77,14 @@ export const techonologyIconList: iconType[] = [
   {
     name: "Express",
     icon: <ExpressSVG color={color} size={35} />,
+  },
+  {
+    name: "FastAPI",
+    icon: <FastAPISVG />,
+  },
+  {
+    name: "React Native",
+    icon: <ReactSVG color={color} size={35} />,
   },
   {
     name: "MongoDB",
