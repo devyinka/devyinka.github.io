@@ -12,9 +12,9 @@ export const ValueCardData: language[] = [
       "Building applications with security in mind through authentication, authorization, input validation, API protection, secure data handling, and awareness of common web vulnerabilities.",
   },
   {
-    title: "Database & Systems",
+    title: "Backend & Data Systems",
     description:
-      "Designing reliable data models and working with relational and NoSQL databases as part of complete application architectures.",
+      "Designing scalable backend architectures, developing APIs, modeling data, and working with relational and NoSQL databases to build reliable applications.",
   },
   {
     title: "Mobile Development",

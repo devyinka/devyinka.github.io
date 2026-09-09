@@ -1,12 +1,10 @@
+import { PestDetectionSVG } from "@/components/ui/icons/pestDiseaseSVG";
 import {
   CSSSVG,
   ExpressSVG,
   JavascriptSVG,
   MagentaKitchenSVG,
   MongoDBSVG,
-  MongooseSVG, // kept in case you need it later
-  PrimeReactSVG, // kept in case you need it later
-  ReactHookFormSVG, // kept in case you need it later
   ReactnativeSVG,
   ReactSVG,
   SmartAttendanceSVG,
@@ -22,6 +20,49 @@ import {
 import { ProjectType } from "../types";
 
 export const ProjectList: ProjectType[] = [
+  {
+    icon: <PestDetectionSVG />,
+    title: "Intelligent System For early pest disease detection in bean Farm",
+    subtitle: "IoT-Based Monitoring & Machine Learning Detection",
+    technologies: [
+      {
+        name: "Typescript",
+        icon: <TypescriptSVG color="#3178C6" size={16} />,
+      },
+      {
+        name: "Next js",
+        icon: <NextSVG color="#61DAFB" size={16} />,
+      },
+      {
+        name: "Tailwind",
+        icon: <TailwindSVG color="#000000" size={16} />,
+      },
+      {
+        name: "Express",
+        icon: <ExpressSVG color="#06B6D4" size={16} />,
+      },
+      {
+        name: "MongoDB",
+        icon: <MongoDBSVG color="#06B6D4" size={16} />,
+      },
+
+      {
+        name: "python",
+        icon: <PythonSVG color="#3776AB" size={35} />,
+      },
+      {
+        name: "FastAPI",
+        icon: <FastAPISVG />,
+      },
+    ],
+    description:
+      "Engineered an end-to-end IoT and machine learning system for early pest and disease detection in bean farming. Integrated an ESP32 with environmental and soil sensors, developed a backend pipeline for processing field data, and implemented Random Forest classification for detecting bean aphids and anthracnose risks. Added real-time alerts and remote control of pesticide or fungicide spraying through a web-based dashboard.",
+    imgUrl:
+      "https://res.cloudinary.com/dnowbob2t/image/upload/v1788935495/pest_eefqpj.jpg",
+    videoUrl: "",
+    githubUrl: "https://github.com/devyinka/Beans-farm-pest-disease-monitoring",
+    websiteUrl: "https://beans-farm-pest-disease-monitoring.vercel.app",
+  },
   {
     icon: <MultimodalAttendanceSVG />,
     title: "Biometric Attendance System",
