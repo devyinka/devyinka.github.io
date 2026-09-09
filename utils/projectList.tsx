@@ -16,6 +16,7 @@ import {
   FastAPISVG,
   PythonSVG,
   NextSVG,
+  WebSocketSVG,
 } from "../components/ui/icons";
 import { ProjectType } from "../types";
 
@@ -40,6 +41,10 @@ export const ProjectList: ProjectType[] = [
       {
         name: "Express",
         icon: <ExpressSVG color="#06B6D4" size={16} />,
+      },
+      {
+        name: "websocket",
+        icon: <WebSocketSVG />,
       },
       {
         name: "MongoDB",

@@ -8,6 +8,7 @@ export * from "./CplusplusSVG";
 export * from "./FigmaSVG";
 export * from "./Supabase";
 export * from "./FastAPISVG";
+export * from "./webSocketSvg";
 
 type IconType = { color: string; size: number };
 
