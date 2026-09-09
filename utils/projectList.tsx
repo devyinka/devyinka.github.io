@@ -113,6 +113,34 @@ export const ProjectList: ProjectType[] = [
     websiteUrl: "https://cpe-attendance-prototype.vercel.app/",
   },
   {
+    icon: <MagentaKitchenSVG />,
+    title: "Restaurant Locator",
+    subtitle: "React Native & Geolocation Integration",
+    technologies: [
+      {
+        name: "React native",
+        icon: <ReactnativeSVG color="#61DAFB" size={16} />,
+      },
+      {
+        name: "Express",
+        icon: <ExpressSVG color="#000" size={16} />,
+      },
+      {
+        name: "MongoDB",
+        icon: <MongoDBSVG color="#1572B6" size={16} />,
+      },
+    ],
+    description:
+      "Engineered a cross-platform React Native application focused on performant API integration. Connected TomTom geolocation services with Node Geocoder for precise coordinate mapping. Built a secure user authentication flow via Firebase, optimizing database queries to sync users' saved locations seamlessly across devices.",
+    imgUrl:
+      "https://res.cloudinary.com/dnowbob2t/image/upload/v1788937870/Restuarantnew_ger3a2.png",
+    videoUrl:
+      "https://res.cloudinary.com/daauphnqb/video/upload/v1770652825/Restuarantnew_el3esg.mp4",
+    githubUrl: "https://github.com/devyinka/Restaurant-finder",
+    websiteUrl:
+      "https://expo.dev/preview/update?message=Latest+update&updateRuntimeVersion=1.0.0&createdAt=2026-02-09T17%3A45%3A58.695Z&slug=exp&projectId=9acd4c0c-7042-4309-98fd-b63ca8d665b8&group=020e7686-dd20-42f9-b827-e95b53652e6b",
+  },
+  {
     icon: <SmartAttendanceSVG />,
     title: "Smart QR Event Logistics Platform",
     subtitle: "Scalable Event Management API",
@@ -151,34 +179,7 @@ export const ProjectList: ProjectType[] = [
     githubUrl: "https://github.com/devyinka/NihubAttendance",
     websiteUrl: "https://www.nihubattendance.tech/",
   },
-  {
-    icon: <MagentaKitchenSVG />,
-    title: "Restaurant Locator",
-    subtitle: "React Native & Geolocation Integration",
-    technologies: [
-      {
-        name: "React native",
-        icon: <ReactnativeSVG color="#61DAFB" size={16} />,
-      },
-      {
-        name: "Express",
-        icon: <ExpressSVG color="#000" size={16} />,
-      },
-      {
-        name: "MongoDB",
-        icon: <MongoDBSVG color="#1572B6" size={16} />,
-      },
-    ],
-    description:
-      "Engineered a cross-platform React Native application focused on performant API integration. Connected TomTom geolocation services with Node Geocoder for precise coordinate mapping. Built a secure user authentication flow via Firebase, optimizing database queries to sync users' saved locations seamlessly across devices.",
-    imgUrl:
-      "https://res.cloudinary.com/dnowbob2t/image/upload/v1788937870/Restuarantnew_ger3a2.png",
-    videoUrl:
-      "https://res.cloudinary.com/daauphnqb/video/upload/v1770652825/Restuarantnew_el3esg.mp4",
-    githubUrl: "https://github.com/devyinka/Restaurant-finder",
-    websiteUrl:
-      "https://expo.dev/preview/update?message=Latest+update&updateRuntimeVersion=1.0.0&createdAt=2026-02-09T17%3A45%3A58.695Z&slug=exp&projectId=9acd4c0c-7042-4309-98fd-b63ca8d665b8&group=020e7686-dd20-42f9-b827-e95b53652e6b",
-  },
+
   {
     icon: <MagentaKitchenSVG />,
     title: "Food Ingredient Finder",
