@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { contactData } from "@/utils";
@@ -7,103 +8,158 @@ import { MailSVG, GithubSVG, LinkedInSVG } from "@/components/ui/icons/";
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.15 } },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
 };
 
 export default function Contact() {
   const { email, github, linkedIn } = contactData;
 
   return (
-    <div className="bg-[#0a0a0a] min-h-screen py-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-12 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-100 tracking-tight">
-            Get In Touch
+    <div className="min-h-screen bg-[#0a0a0a] px-6 py-24">
+      <div className="mx-auto max-w-3xl">
+        {/* Header */}
+        <div className="mb-14">
+          <h1 className="text-4xl font-bold tracking-tight text-slate-100 md:text-5xl">
+            Let&apos;s Connect
           </h1>
-          <p className="text-slate-400 mt-4 text-lg">
-            Let&apos;s discuss networking, backend architecture, or your next
-            engineering role.
+
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-400">
+            Let&apos;s talk about building reliable web applications, backend
+            systems, intelligent solutions, and connected IoT products.
           </p>
         </div>
 
+        {/* Contact Links */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-5"
+          className="space-y-3"
         >
-          {/* Email Link */}
-          <motion.div variants={itemVariants} className="md:col-span-1 h-full">
+          {/* Email */}
+          <motion.div variants={itemVariants}>
             <Link
-              href={`mailto:${email}?subject=Mail from your Portfolio`}
-              className="flex flex-col justify-center items-center gap-3 p-8 rounded-2xl bg-slate-800/30 border border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/60 hover:border-cyan-500/50 transition-all duration-300 h-full group"
+              href={`mailto:${email}?subject=Hello from your portfolio`}
+              className="group flex items-center justify-between gap-4 rounded-xl border border-slate-800 px-5 py-4 transition-all duration-300 hover:border-cyan-500/50 hover:bg-slate-900/50"
             >
-              <div className="p-4 bg-cyan-950/50 rounded-full text-cyan-400 group-hover:scale-110 transition-transform">
-                <MailSVG />
-              </div>
-              <span className="text-slate-200 font-medium mt-2">{email}</span>
-            </Link>
-          </motion.div>
+              <div className="flex min-w-0 items-center gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-cyan-950/50 text-cyan-400 transition-transform duration-300 group-hover:scale-105">
+                  <MailSVG />
+                </div>
 
-          {/* GitHub Card - Spans 2 rows */}
-          <motion.div
-            variants={itemVariants}
-            className="md:col-span-1 md:row-span-2 h-full"
-          >
-            <Link
-              href={github}
-              rel="noopener noreferrer"
-              target="_blank"
-              className="flex flex-col justify-center items-center gap-4 p-8 rounded-2xl bg-slate-800/30 border border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/60 hover:border-slate-500/50 transition-all duration-300 h-full group"
-            >
-              <div className="group-hover:-translate-y-2 transition-transform duration-300">
-                <GithubSVG color="#ffffff" size={70} />
-              </div>
-              <div className="text-center mt-4">
-                <h3 className="text-2xl font-bold text-slate-100">
-                  GitHub Profile
-                </h3>
-                <p className="text-slate-400 mt-2">
-                  Explore my backend architectures, IoT firmware, and source
-                  code.
-                </p>
-              </div>
-            </Link>
-          </motion.div>
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-slate-100">Email Me</h3>
 
-          {/* LinkedIn Link */}
-          <motion.div variants={itemVariants} className="md:col-span-1 h-full">
-            <Link
-              href={linkedIn}
-              rel="noopener noreferrer"
-              target="_blank"
-              className="flex flex-col justify-center items-center p-8 rounded-2xl bg-[#0077b5]/10 border border-[#0077b5]/30 backdrop-blur-sm hover:bg-[#0077b5]/20 hover:border-[#0077b5]/60 transition-all duration-300 h-full group"
-            >
-              <div className="group-hover:scale-110 transition-transform duration-300">
-                <LinkedInSVG />
+                  <p className="mt-0.5 truncate text-sm text-slate-500">
+                    {email}
+                  </p>
+                </div>
               </div>
-              <span className="text-slate-300 font-medium mt-4">
-                Connect on LinkedIn
+
+              <span className="text-lg text-slate-600 transition-all duration-300 group-hover:translate-x-1 group-hover:text-cyan-400">
+                →
               </span>
             </Link>
           </motion.div>
 
-          {/* Form Container */}
-          <motion.div
-            variants={itemVariants}
-            className="col-span-1 md:col-span-2 mt-6 p-8 rounded-2xl bg-slate-900/50 border border-slate-800 shadow-2xl"
-          >
-            <h3 className="text-xl font-bold text-slate-200 mb-6">
-              Send a Direct Message
-            </h3>
-            <Form />
+          {/* GitHub */}
+          <motion.div variants={itemVariants}>
+            <Link
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-between gap-4 rounded-xl border border-slate-800 px-5 py-4 transition-all duration-300 hover:border-slate-500 hover:bg-slate-900/50"
+            >
+              <div className="flex min-w-0 items-center gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-slate-800/70 transition-transform duration-300 group-hover:scale-105">
+                  <GithubSVG color="#ffffff" size={25} />
+                </div>
+
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-slate-100">GitHub</h3>
+
+                  <p className="mt-0.5 truncate text-sm text-slate-500">
+                    Projects, source code, and technical work
+                  </p>
+                </div>
+              </div>
+
+              <span className="text-lg text-slate-600 transition-all duration-300 group-hover:translate-x-1 group-hover:text-slate-300">
+                ↗
+              </span>
+            </Link>
           </motion.div>
+
+          {/* LinkedIn */}
+          <motion.div variants={itemVariants}>
+            <Link
+              href={linkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-between gap-4 rounded-xl border border-slate-800 px-5 py-4 transition-all duration-300 hover:border-[#0077b5]/60 hover:bg-slate-900/50"
+            >
+              <div className="flex min-w-0 items-center gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#0077b5]/10 transition-transform duration-300 group-hover:scale-105">
+                  <LinkedInSVG />
+                </div>
+
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-slate-100">LinkedIn</h3>
+
+                  <p className="mt-0.5 truncate text-sm text-slate-500">
+                    Connect with me professionally
+                  </p>
+                </div>
+              </div>
+
+              <span className="text-lg text-slate-600 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#0077b5]">
+                ↗
+              </span>
+            </Link>
+          </motion.div>
+        </motion.div>
+
+        {/* Message Form */}
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-50px" }}
+          className="mt-14"
+        >
+          <div className="mb-7">
+            <h2 className="text-2xl font-bold text-slate-100">
+              Start a Conversation
+            </h2>
+
+            <p className="mt-2 text-slate-500">
+              Have a project, idea, or technical challenge in mind? Send me a
+              message and let&apos;s talk.
+            </p>
+          </div>
+
+          <Form />
         </motion.div>
       </div>
     </div>

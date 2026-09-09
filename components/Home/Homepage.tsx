@@ -116,49 +116,6 @@ export default function Homepage() {
                 {whoAmI}
               </motion.p>
 
-              {/* =====================================================
-                  TECHNOLOGY STACK
-              ====================================================== */}
-
-              <motion.div
-                variants={slideUp}
-                className="mt-7 flex flex-wrap justify-center gap-2 sm:mt-8 lg:justify-start"
-              >
-                {skills.map((technology) => (
-                  <span
-                    key={technology}
-                    className="max-w-full rounded-full border border-cyan-400/10 bg-cyan-400/5 px-3 py-1.5 text-center text-[11px] font-medium text-cyan-300 sm:text-xs"
-                  >
-                    {technology}
-                  </span>
-                ))}
-              </motion.div>
-
-              {/* =====================================================
-                  SPECIALIZATION BADGES
-              ====================================================== */}
-
-              <motion.div
-                variants={slideUp}
-                className="mt-5 flex flex-wrap justify-center gap-2 lg:justify-start"
-              >
-                <span className="max-w-full rounded-full border border-emerald-400/10 bg-emerald-400/5 px-3 py-1.5 text-center text-[11px] font-medium leading-4 text-emerald-300 sm:text-xs">
-                  Security-Minded Development
-                </span>
-
-                <span className="max-w-full rounded-full border border-blue-400/10 bg-blue-400/5 px-3 py-1.5 text-center text-[11px] font-medium leading-4 text-blue-300 sm:text-xs">
-                  Networking &amp; IoT
-                </span>
-
-                <span className="max-w-full rounded-full border border-purple-400/10 bg-purple-400/5 px-3 py-1.5 text-center text-[11px] font-medium leading-4 text-purple-300 sm:text-xs">
-                  Ethical Hacking · Learning
-                </span>
-              </motion.div>
-
-              {/* =====================================================
-                  QUOTE
-              ====================================================== */}
-
               <motion.p
                 variants={slideUp}
                 className="mx-auto mt-7 max-w-xl border-l-2 border-cyan-400/50 pl-4 text-left text-sm italic leading-relaxed text-slate-500 lg:mx-0"
