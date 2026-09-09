@@ -17,6 +17,7 @@ import {
   PythonSVG,
   NextSVG,
   WebSocketSVG,
+  CplusplusSVG,
 } from "../components/ui/icons";
 import { ProjectType } from "../types";
 
@@ -58,6 +59,10 @@ export const ProjectList: ProjectType[] = [
       {
         name: "FastAPI",
         icon: <FastAPISVG />,
+      },
+      {
+        name: "C++",
+        icon: <CplusplusSVG color="#9ca3af" size={35} />,
       },
     ],
     description:
@@ -106,6 +111,10 @@ export const ProjectList: ProjectType[] = [
       {
         name: "FastAPI",
         icon: <FastAPISVG />,
+      },
+      {
+        name: "C++",
+        icon: <CplusplusSVG color="#9ca3af" size={35} />,
       },
     ],
     description:
