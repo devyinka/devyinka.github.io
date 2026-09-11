@@ -118,7 +118,7 @@ export const ProjectList: ProjectType[] = [
       },
     ],
     description:
-      "Architected a secure backend pipeline for a biometric attendance system. Integrated ESP32 edge devices via MQTT with a robust Express/PostgreSQL backend. Implemented Role-Based Access Control (RBAC) for admins and lecturers, offline synchronization capabilities, and leveraged Solana blockchain for immutable, tamper-proof attendance receipts.",
+      "Engineered a full-stack biometric attendance platform integrating ESP32 edge devices with a modern web application and backend services. Built the frontend dashboard and backend APIs for biometric enrollment, attendance processing, authentication, and role-based access control. Integrated MQTT communication, offline synchronization, and Solana blockchain verification to support secure and tamper-resistant attendance records.",
     imgUrl:
       "https://res.cloudinary.com/dnowbob2t/image/upload/v1788939080/multimodal_attendance_login_page_pupdic.jpg",
     videoUrl:
@@ -145,7 +145,7 @@ export const ProjectList: ProjectType[] = [
       },
     ],
     description:
-      "Engineered a cross-platform React Native application focused on performant API integration. Connected TomTom geolocation services with Node Geocoder for precise coordinate mapping. Built a secure user authentication flow via Firebase, optimizing database queries to sync users' saved locations seamlessly across devices.",
+      "Built a cross-platform restaurant discovery application with React Native, Express, and MongoDB. Developed the mobile interface and backend APIs for restaurant search, geolocation, user authentication, and saved locations. Integrated TomTom geolocation services and Node Geocoder for location mapping, with Firebase authentication for secure user access and synchronized data.",
     imgUrl:
       "https://res.cloudinary.com/dnowbob2t/image/upload/v1788937870/Restuarantnew_ger3a2.png",
     videoUrl:
@@ -185,7 +185,7 @@ export const ProjectList: ProjectType[] = [
       },
     ],
     description:
-      "Developed the backend infrastructure for a large-scale event logistics platform. Engineered a MongoDB database schema to enforce track constraints and handle concurrent QR code scans. Implemented secure role-based routing and authentication, allowing super-admins full oversight while restricting sub-admins to isolated attendance endpoints.",
+      "Built a full-stack event attendance and logistics platform for managing event registration, track allocation, and QR-based attendance. Developed the Next.js frontend and Express/MongoDB backend, implementing authentication, role-based access control, QR code generation and scanning, and attendance tracking. Designed separate administrative workflows for super-admins and sub-admins while enforcing event and track constraints.",
     imgUrl:
       "https://res.cloudinary.com/dnowbob2t/image/upload/v1788937872/SmartAttendanceNew_wnqr1n.png",
     videoUrl:
@@ -213,7 +213,7 @@ export const ProjectList: ProjectType[] = [
       },
     ],
     description:
-      "Developed a React-based recipe discovery engine that interfaces with external REST APIs to aggregate complex meal data. Optimized client-side state management and implemented dynamic search algorithms to filter and render extensive ingredient lists efficiently.",
+      "Built a React-based recipe discovery application that integrates external REST APIs to search and display recipe and ingredient data. Implemented dynamic search, client-side state management, and responsive interfaces for efficiently exploring recipe information.",
     imgUrl:
       "https://res.cloudinary.com/dnowbob2t/image/upload/v1788937871/Recipe-finder_zunrig.png",
     videoUrl:
