@@ -44,8 +44,9 @@ export default function Contact() {
           </h1>
 
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-400">
-            Let&apos;s talk about building reliable web applications, backend
-            systems, intelligent solutions, and connected IoT products.
+            Let&apos;s talk about building reliable web applications,
+            cross-platform mobile apps, backend systems, reliable database
+            Architecture, intelligent solutions, and connected IoT products.
           </p>
         </div>
 
