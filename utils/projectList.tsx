@@ -118,7 +118,7 @@ export const ProjectList: ProjectType[] = [
       },
     ],
     description:
-      "Engineered a full-stack biometric attendance platform integrating ESP32 edge devices with a modern web application and backend services. Built the frontend dashboard and backend APIs for biometric enrollment, attendance processing, authentication, and role-based access control. Integrated MQTT communication, offline synchronization, and Solana blockchain verification to support secure and tamper-resistant attendance records.",
+      "Engineered a full-stack biometric attendance system integrating custom ESP32-based hardware with a web application and backend services. The platform provides role-based access for students, lecturers, administrators, and Heads of Department, with dedicated workflows for enrollment, attendance, and academic management. During scheduled classes, the hardware automatically switches from enrollment mode to attendance mode, allowing lecturers to record student attendance through biometric verification. The system supports offline attendance capture when network connectivity is unavailable, stores attendance locally, and automatically synchronizes records with the backend once connectivity is restored. Attendance is evaluated against scheduled class times to determine whether a student is present or absent, while the web platform provides centralized access to attendance records and management functions.",
     imgUrl:
       "https://res.cloudinary.com/dnowbob2t/image/upload/v1788939080/multimodal_attendance_login_page_pupdic.jpg",
     videoUrl:
