@@ -249,6 +249,70 @@ export const AntdSVG = ({ color, size }: IconType) => {
   );
 };
 
+export const TrueEstateSVG = ({ color, size }: IconType) => {
+  return (
+    <svg
+      role="img"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      fill="none"
+      stroke={color}
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <title>True Estate</title>
+
+      {/* Roof */}
+      <path d="M3 10.5L12 3l9 7.5" />
+
+      {/* Main building */}
+      <path d="M5 9v11h14V9" />
+
+      {/* Door */}
+      <path d="M10 20v-6h4v6" />
+
+      {/* Windows */}
+      <path d="M7.5 11.5h2v2h-2z" />
+      <path d="M14.5 11.5h2v2h-2z" />
+
+      {/* Foundation */}
+      <path d="M3 20h18" />
+    </svg>
+  );
+};
+
+export const RedisSVG = ({ color, size }: IconType) => {
+  return (
+    <svg
+      role="img"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      fill={color}
+    >
+      <title>Redis</title>
+
+      {/* Top layer */}
+      <path d="M12 2.5L2.5 6.5 12 10.5l9.5-4L12 2.5z" />
+
+      {/* Middle layer */}
+      <path d="M2.5 9.5L12 13.5l9.5-4v3L12 16.5l-9.5-4v-3z" />
+
+      {/* Bottom layer */}
+      <path d="M2.5 15L12 19l9.5-4v3L12 22l-9.5-4v-3z" />
+
+      {/* Top highlights */}
+      <circle cx="8" cy="6.5" r="0.8" fill="#FFFFFF" />
+      <circle cx="12" cy="5" r="0.8" fill="#FFFFFF" />
+      <circle cx="16" cy="6.5" r="0.8" fill="#FFFFFF" />
+    </svg>
+  );
+};
+
 export const PrimeReactSVG = ({ color, size }: IconType) => {
   return (
     <svg

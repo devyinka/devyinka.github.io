@@ -18,6 +18,9 @@ import {
   NextSVG,
   WebSocketSVG,
   CplusplusSVG,
+  GraphQLSVG,
+  TrueEstateSVG,
+  RedisSVG,
 } from "../components/ui/icons";
 import { ProjectType } from "../types";
 
@@ -75,6 +78,7 @@ export const ProjectList: ProjectType[] = [
     githubUrl: "https://github.com/devyinka/Beans-farm-pest-disease-monitoring",
     websiteUrl: "https://beans-farm-pest-disease-monitoring.vercel.app",
   },
+
   {
     icon: <MultimodalAttendanceSVG />,
     title: "Biometric Attendance System",
@@ -125,6 +129,50 @@ export const ProjectList: ProjectType[] = [
       "https://res.cloudinary.com/dnowbob2t/video/upload/v1788621039/BioAttend_Biometric_Attendance___Computer_Engineering_FUTMINNA_-_5_September_2026_xcrcqj.mp4",
     githubUrl: "https://github.com/MadMax-source/biometric-attendace-web",
     websiteUrl: "https://cpe-attendance-prototype.vercel.app/",
+  },
+
+  {
+    icon: <TrueEstateSVG color="#000000" size={16} />,
+    title: "True Estate",
+    subtitle: "Multi-Role Property Management & Real Estate Marketplace",
+    technologies: [
+      {
+        name: "React Native",
+        icon: <ReactnativeSVG color="#61DAFB" size={16} />,
+      },
+      {
+        name: "TypeScript",
+        icon: <TypescriptSVG color="#3178C6" size={16} />,
+      },
+      {
+        name: "Express.js",
+        icon: <ExpressSVG color="#000000" size={16} />,
+      },
+      {
+        name: "PostgreSQL",
+        icon: <PostgreSQLSVG color="#336791" size={16} />,
+      },
+      {
+        name: "GraphQL",
+        icon: <GraphQLSVG color="#E10098" size={16} />,
+      },
+      {
+        name: "Socket.IO",
+        icon: <WebSocketSVG />,
+      },
+      {
+        name: "Redis",
+        icon: <RedisSVG color="#DC382D" size={16} />,
+      },
+    ],
+    description:
+      "True Estate is a multi-role property management platform and real estate marketplace designed to simplify property operations and rental management. The platform provides dedicated experiences for landlords, agents, tenants, and property technicians, with role-based access and workflows tailored to each user. Landlords can manage their properties, units, tenant relationships, and property operations, while agents can manage assigned properties and support rental activities across their authorized relationships. Tenants have access to their tenancy information and related property services, while technicians can handle assigned maintenance tasks. The platform also introduces a property marketplace where landlords can list available rental properties for prospective tenants and agents to discover. the system is being developed with a focus on structured property management, real-time communication, and scalable multi-role architecture.",
+    imgUrl:
+      "https://res.cloudinary.com/dnowbob2t/image/upload/v1793743299/trueEstate_kycdfc.jpg",
+    videoUrl:
+      "https://res.cloudinary.com/dnowbob2t/video/upload/v1793743686/TrueEstate_ois6v9.mp4",
+    githubUrl: "https://github.com/devyinka/TruesEstateApp",
+    websiteUrl: "",
   },
   {
     icon: <MagentaKitchenSVG />,

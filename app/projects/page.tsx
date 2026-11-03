@@ -103,7 +103,7 @@ const ProjectCard = ({
       <div className="w-full lg:w-1/2 relative group rounded-2xl overflow-hidden border border-slate-800 bg-slate-900/50 aspect-video shadow-[0_0_40px_-15px_rgba(6,182,212,0.15)]">
         <video
           ref={videoRef}
-          className="h-full w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+          className="h-full w-full object-contain bg-black opacity-80 group-hover:opacity-100 transition-opacity duration-500"
           loop
           muted
           playsInline
@@ -148,7 +148,7 @@ const ProjectCard = ({
 
         {/* Links / Action Buttons */}
         <div className="flex gap-4 mt-4">
-          {websiteUrl !== "NONE" && websiteUrl && (
+          {websiteUrl ? (
             <Link
               href={websiteUrl}
               target="_blank"
@@ -157,6 +157,10 @@ const ProjectCard = ({
               <LinkSVG />
               Live Deployment
             </Link>
+          ) : (
+            <div className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-800 text-slate-400 font-medium cursor-not-allowed">
+              coming soon
+            </div>
           )}
           {githubUrl && (
             <Link
