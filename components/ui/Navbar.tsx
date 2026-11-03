@@ -60,10 +60,11 @@ export const NavbarSection = () => {
         classNames={{
           base: "bg-transparent max-w-fit",
           wrapper: [
-            "bg-slate-900/90",
+            "glass-surface",
+            "bg-slate-900/70",
             "backdrop-blur-2xl",
             "border",
-            "border-cyan-500/30",
+            "border-cyan-400/30",
             "shadow-[0_10px_30px_rgba(0,0,0,0.8)]",
             "rounded-full",
             "h-12",
@@ -86,7 +87,7 @@ export const NavbarSection = () => {
                 <Link
                   className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
                     isActive
-                      ? "bg-cyan-950/60 text-cyan-200 border border-cyan-500/40 shadow-[0_0_15px_rgba(6,182,212,0.2)]"
+                      ? "bg-cyan-950/70 text-cyan-200 border border-cyan-400/40 shadow-[0_0_20px_rgba(8,116,95,0.3)]"
                       : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/40"
                   }`}
                   href={section.url}

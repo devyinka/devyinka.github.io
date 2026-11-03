@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#0a0a0a] text-slate-300 font-sans relative">
+      <body className="relative bg-[#0a0a0a] font-sans text-slate-300">
         {/* Floating Navbar locked to the top center */}
         <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
           <div className="pointer-events-auto">

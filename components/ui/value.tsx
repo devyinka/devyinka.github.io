@@ -15,7 +15,7 @@ export const ValueCard = ({
       transition={{
         duration: 0.2,
       }}
-      className="rounded-xl border border-white/5 bg-white/[0.025] p-6 transition-colors duration-300 hover:border-cyan-400/10 hover:bg-white/[0.04]"
+      className="glass-surface rounded-xl p-6 transition-colors duration-300 hover:border-cyan-300/30 hover:bg-cyan-400/[0.06]"
     >
       <h3 className="font-medium text-slate-200">{title}</h3>
 

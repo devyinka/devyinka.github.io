@@ -53,7 +53,7 @@ export default function Homepage() {
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         <div className="absolute -left-40 -top-40 h-[450px] w-[450px] rounded-full bg-cyan-500/10 blur-3xl sm:h-[550px] sm:w-[550px]" />
 
-        <div className="absolute -bottom-40 -right-40 h-[400px] w-[400px] rounded-full bg-blue-600/10 blur-3xl sm:h-[500px] sm:w-[500px]" />
+        <div className="absolute -bottom-40 -right-40 h-[400px] w-[400px] rounded-full bg-cyan-700/10 blur-3xl sm:h-[500px] sm:w-[500px]" />
       </div>
 
       {/* =====================================================
@@ -71,7 +71,7 @@ export default function Homepage() {
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="w-full overflow-hidden rounded-2xl border border-white/5 bg-white/[0.03] p-6 shadow-2xl backdrop-blur-sm sm:p-8 lg:p-12"
+              className="glass-surface w-full overflow-hidden rounded-2xl p-6 sm:p-8 lg:p-12"
             >
               {/* PROFILE IMAGE */}
 
@@ -310,7 +310,7 @@ export default function Homepage() {
                     ].map((engineeringSkill) => (
                       <span
                         key={engineeringSkill}
-                        className="rounded-full border border-blue-400/10 bg-blue-400/5 px-3 py-1.5 text-[11px] leading-4 text-blue-300 sm:text-xs"
+                        className="rounded-full border border-cyan-400/10 bg-cyan-400/5 px-3 py-1.5 text-[11px] leading-4 text-cyan-300 sm:text-xs"
                       >
                         {engineeringSkill}
                       </span>

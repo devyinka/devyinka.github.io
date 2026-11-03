@@ -62,7 +62,7 @@ export default function Contact() {
           <motion.div variants={itemVariants}>
             <Link
               href={`mailto:${email}?subject=Hello from your portfolio`}
-              className="group flex items-center justify-between gap-4 rounded-xl border border-slate-800 px-5 py-4 transition-all duration-300 hover:border-cyan-500/50 hover:bg-slate-900/50"
+              className="glass-surface group flex items-center justify-between gap-4 rounded-xl px-5 py-4 transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-950/20"
             >
               <div className="flex min-w-0 items-center gap-4">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-cyan-950/50 text-cyan-400 transition-transform duration-300 group-hover:scale-105">
@@ -90,7 +90,7 @@ export default function Contact() {
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-between gap-4 rounded-xl border border-slate-800 px-5 py-4 transition-all duration-300 hover:border-slate-500 hover:bg-slate-900/50"
+              className="glass-surface group flex items-center justify-between gap-4 rounded-xl px-5 py-4 transition-all duration-300 hover:border-slate-500 hover:bg-slate-900/50"
             >
               <div className="flex min-w-0 items-center gap-4">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-slate-800/70 transition-transform duration-300 group-hover:scale-105">
@@ -118,7 +118,7 @@ export default function Contact() {
               href={linkedIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-between gap-4 rounded-xl border border-slate-800 px-5 py-4 transition-all duration-300 hover:border-[#0077b5]/60 hover:bg-slate-900/50"
+              className="glass-surface group flex items-center justify-between gap-4 rounded-xl px-5 py-4 transition-all duration-300 hover:border-[#0077b5]/60 hover:bg-slate-900/50"
             >
               <div className="flex min-w-0 items-center gap-4">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#0077b5]/10 transition-transform duration-300 group-hover:scale-105">
@@ -147,7 +147,7 @@ export default function Contact() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-50px" }}
-          className="mt-14"
+          className="glass-surface mt-14 rounded-2xl p-6 sm:p-8"
         >
           <div className="mb-7">
             <h2 className="text-2xl font-bold text-slate-100">

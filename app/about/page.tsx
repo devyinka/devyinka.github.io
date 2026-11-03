@@ -132,7 +132,7 @@ export default function About() {
 
         {/* Call to Action */}
         <Section>
-          <div className="mt-8 p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-[#0a0a0a] border border-slate-800 text-center shadow-2xl">
+          <div className="glass-surface mt-8 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-bold text-slate-200 mb-4">
               {" "}
               Explore My Projects{" "}

@@ -10,7 +10,7 @@ import { GithubSVG, LinkSVG } from "@/components/ui/icons";
 export default function Projects() {
   return (
     <div className="bg-[#0a0a0a] min-h-screen text-slate-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 py-20 px-6">
-      <div className="max-w-7xl mx-auto flex flex-col gap-24">
+      <div className="mx-auto flex max-w-7xl flex-col gap-24">
         {/* Page Header */}
         <div className="mb-10 text-center lg:text-left">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-200 tracking-tight">
@@ -100,10 +100,10 @@ const ProjectCard = ({
       className={`flex flex-col gap-8 lg:items-center ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"}`}
     >
       {/* Video/Image Section */}
-      <div className="w-full lg:w-1/2 relative group rounded-2xl overflow-hidden border border-slate-800 bg-slate-900/50 aspect-video shadow-[0_0_40px_-15px_rgba(6,182,212,0.15)]">
+      <div className="glass-surface relative aspect-video w-full overflow-hidden rounded-2xl group lg:w-1/2">
         <video
           ref={videoRef}
-          className="h-full w-full object-contain bg-black opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+          className="h-full w-full bg-slate-950 object-contain opacity-80 transition-opacity duration-500 group-hover:opacity-100"
           loop
           muted
           playsInline
