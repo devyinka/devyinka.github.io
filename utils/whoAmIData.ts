@@ -6,7 +6,7 @@ export const whoAmIData: whoAmIDataType = {
   profession: "Full-Stack Software Developer",
 
   whoAmI:
-    "I build full-stack web and mobile applications with a strong focus on reliable, security-conscious software. I work with React, Next.js, Node.js, Express, and modern databases while expanding my skills in ethical hacking and penetration testing. My Telecommunication Engineering background also gives me a strong foundation in networking, IoT, and connected systems.",
+    "I'm a software developer focused on building web applications and mobile apps. I love taking ideas from concept to working products, planning features, designing how different parts of an application work together, and developing the systems behind them. I pay attention to the details that make an application worth using, a smooth user experience, dependable functionality, proper data handling, and security. My goal is to build products that solve real problems, work reliably, and can grow without becoming difficult to maintain.",
 
   quote: "Building software with a systems and security mindset.",
 };
