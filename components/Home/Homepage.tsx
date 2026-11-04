@@ -1,463 +1,116 @@
 "use client";
-
-import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
-import { Tooltip } from "@nextui-org/tooltip";
+import { motion } from "framer-motion";
+import { ProjectList } from "@/utils/projectList";
 
-import { ValueCard } from "@/components/ui/value";
-import { ValueCardData } from "@/utils/value";
-import { skills } from "@/utils/skill";
-import { whoAmIData, techonologyIconList } from "@/utils";
-import { iconType } from "@/types";
-
-const slideUp = {
-  hidden: {
-    opacity: 0,
-    y: 25,
-  },
-
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const staggerContainer = {
-  hidden: {
-    opacity: 0,
-  },
-
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-    },
-  },
-};
+const capabilities = [
+  { number: "01", title: "Web applications", detail: "Thoughtful interfaces backed by dependable application logic, APIs and data models." },
+  { number: "02", title: "Mobile products", detail: "Cross-platform experiences designed around real user workflows and connected services." },
+  { number: "03", title: "Backend systems", detail: "Structured services, authentication, integrations and data flows that hold products together." },
+  { number: "04", title: "Connected solutions", detail: "Software that works with devices, sensors and intelligent processing beyond the browser." },
+];
 
 export default function Homepage() {
-  const { fullName, profession, whoAmI, quote } = whoAmIData;
-
+  const featured = [ProjectList[0], ProjectList[4], ProjectList[2], ProjectList[1]].filter(Boolean);
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#0a0a0a] font-sans text-slate-300 selection:bg-cyan-500/30 selection:text-cyan-200">
-      {/* =====================================================
-          BACKGROUND EFFECTS
-      ====================================================== */}
-
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-        <div className="absolute -left-40 -top-40 h-[450px] w-[450px] rounded-full bg-cyan-500/10 blur-3xl sm:h-[550px] sm:w-[550px]" />
-
-        <div className="absolute -bottom-40 -right-40 h-[400px] w-[400px] rounded-full bg-cyan-700/10 blur-3xl sm:h-[500px] sm:w-[500px]" />
-      </div>
-
-      {/* =====================================================
-          PAGE CONTAINER
-      ====================================================== */}
-
-      <div className="relative z-10 mx-auto w-full max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 md:px-12 md:py-20 lg:px-24">
-        <div className="mx-auto w-full max-w-4xl">
-          {/* =====================================================
-              HERO
-          ====================================================== */}
-
-          <header className="mb-16 sm:mb-20">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={staggerContainer}
-              className="glass-surface w-full overflow-hidden rounded-2xl p-6 sm:p-8 lg:p-12"
-            >
-              {/* PROFILE IMAGE */}
-
-              <motion.div
-                variants={slideUp}
-                className="relative mx-auto mb-6 h-24 w-24 sm:h-28 sm:w-28 lg:mx-0"
-              >
-                <Image
-                  src="/salam.jpg"
-                  alt={`${fullName} photo`}
-                  fill
-                  priority
-                  sizes="112px"
-                  className="rounded-full border-2 border-cyan-400/30 object-cover grayscale transition-all duration-700 hover:border-cyan-400/70 hover:grayscale-0"
-                />
-              </motion.div>
-
-              {/* NAME */}
-
-              <motion.h1
-                variants={slideUp}
-                className="break-words text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl md:text-5xl"
-              >
-                {fullName}
-              </motion.h1>
-
-              {/* PROFESSION */}
-
-              <motion.h2
-                variants={slideUp}
-                className="mt-3 text-base font-medium tracking-tight text-cyan-400 sm:text-lg md:text-xl"
-              >
-                {profession}
-              </motion.h2>
-
-              {/* INTRODUCTION */}
-
-              <motion.p
-                variants={slideUp}
-                className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-relaxed lg:mx-0"
-              >
-                {whoAmI}
-              </motion.p>
-
-              <motion.p
-                variants={slideUp}
-                className="mx-auto mt-7 max-w-xl border-l-2 border-cyan-400/50 pl-4 text-left text-sm italic leading-relaxed text-slate-500 lg:mx-0"
-              >
-                &quot;{quote}&quot;
-              </motion.p>
-
-              {/* =====================================================
-                  CTA BUTTONS
-              ====================================================== */}
-
-              <motion.div
-                variants={slideUp}
-                className="mt-8 flex w-full flex-col gap-3 sm:flex-row sm:items-center lg:justify-start"
-              >
-                <Link
-                  href="/projects"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 transition-all duration-300 hover:bg-cyan-400 hover:shadow-[0_0_25px_rgba(34,211,238,0.2)] sm:w-auto"
-                >
-                  View My Projects
-                  <span>→</span>
-                </Link>
-
-                <Link
-                  href="/about"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 text-sm font-medium text-slate-300 transition-all duration-300 hover:border-cyan-400/30 hover:bg-cyan-400/5 hover:text-cyan-300 sm:w-auto"
-                >
-                  About Me
-                </Link>
-              </motion.div>
+    <div className="overflow-hidden">
+      <section className="site-shell relative pb-20 pt-16 sm:pb-28 sm:pt-24">
+        <div className="pointer-events-none absolute -right-24 top-16 -z-10 h-80 w-80 rounded-full bg-[#eaf3eb] blur-3xl" />
+        <div className="grid items-center gap-12 lg:grid-cols-[1.25fr_.75fr] lg:gap-20">
+          <div>
+            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .5 }}
+              className="mb-8 flex items-center gap-3">
+              <span className="h-2 w-2 rounded-full bg-[#27945b]" />
+              <span className="eyebrow">Software engineer · Nigeria</span>
             </motion.div>
-          </header>
-
-          {/* =====================================================
-              MAIN CONTENT
-          ====================================================== */}
-
-          <main className="flex flex-col gap-16 sm:gap-20">
-            {/* =====================================================
-                WHAT I DO
-            ====================================================== */}
-
-            <Section>
-              <SectionHeading>What I Do</SectionHeading>
-
-              <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2">
-                {ValueCardData.map((value, index) => (
-                  <ValueCard
-                    key={index}
-                    title={value.title}
-                    description={value.description}
-                  />
-                ))}
+            <motion.h1 initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65, delay: .08 }}
+              className="display-heading max-w-[12ch] text-[clamp(3rem,8vw,6.8rem)] font-semibold text-[#17231c]">
+              I build software that <span className="text-[#176b43]">moves ideas forward.</span>
+            </motion.h1>
+            <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .6, delay: .18 }}
+              className="mt-8 max-w-[610px] text-base leading-8 text-[#657168] sm:text-lg">
+              I turn product ideas and real-world requirements into useful web and mobile applications. I work across the interface, backend services, APIs and data layer to make the whole product work as one system.
+            </motion.p>
+            <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .6, delay: .26 }}
+              className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link href="/projects" className="green-button">Explore selected work <span>↗</span></Link>
+              <Link href="/Contact" className="outline-button">Get in touch <span>↗</span></Link>
+            </motion.div>
+            <div className="mt-12 flex flex-wrap gap-x-7 gap-y-3 border-t border-[#e5eae5] pt-6 text-xs text-[#7a857d]">
+              <span>Full-stack development</span><span>Mobile applications</span><span>Systems integration</span>
+            </div>
+          </div>
+          <motion.div initial={{ opacity: 0, scale: .96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: .8, delay: .12 }}
+            className="relative mx-auto w-full max-w-[390px] lg:mt-4">
+            <div className="absolute -inset-5 -rotate-3 rounded-[28px] bg-[#e4f0e6]" />
+            <div className="relative overflow-hidden rounded-[24px] border border-[#dce5dd] bg-white p-3 shadow-[0_24px_70px_rgba(28,58,38,.12)]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[17px] bg-[#dfe9e1]">
+                <Image src="/salam.jpg" alt="Portrait of Salam Sodiq" fill priority sizes="(max-width: 1024px) 80vw, 390px" className="object-cover object-[center_24%] saturate-[.88] contrast-[1.04]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,55,34,.04)_25%,rgba(18,55,34,.22)_100%)]" />
+                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#173e2a]/25 to-transparent" />
               </div>
-
-              <Divider />
-            </Section>
-
-            {/* =====================================================
-                SECURITY MINDSET
-            ====================================================== */}
-
-            <Section>
-              <SectionHeading>Security Mindset</SectionHeading>
-
-              <div className="w-full overflow-hidden rounded-2xl border border-emerald-400/10 bg-emerald-400/[0.025] p-5 sm:p-7 md:p-8">
-                <div className="flex flex-col gap-5 sm:gap-6 md:flex-row md:items-start">
-                  {/* SECURITY ICON */}
-
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-emerald-400/20 bg-emerald-400/10 text-lg text-emerald-300 sm:h-12 sm:w-12 sm:text-xl">
-                    ◈
-                  </div>
-
-                  <div className="min-w-0">
-                    <h3 className="text-base font-semibold leading-6 text-slate-200 sm:text-lg">
-                      Security is part of the development process
-                    </h3>
-
-                    <p className="mt-3 text-sm leading-6 text-slate-400">
-                      I believe applications should not only work correctly, but
-                      should also be designed with security in mind. I apply
-                      security-conscious practices during development while
-                      continuously expanding my knowledge of ethical hacking and
-                      penetration testing.
-                    </p>
-
-                    {/* SECURITY SKILLS */}
-
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {[
-                        "Authentication",
-                        "Authorization",
-                        "Input Validation",
-                        "API Security",
-                        "Secure Data Handling",
-                        "OWASP Awareness",
-                        "Ethical Hacking",
-                        "Penetration Testing",
-                      ].map((securitySkill) => (
-                        <span
-                          key={securitySkill}
-                          className="rounded-full border border-emerald-400/10 bg-emerald-400/5 px-3 py-1.5 text-[11px] leading-4 text-emerald-300 sm:text-xs"
-                        >
-                          {securitySkill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+              <div className="flex items-center justify-between px-2 pb-1 pt-4">
+                <div><p className="text-sm font-bold text-[#17231c]">Salam Sodiq</p><p className="mt-1 text-xs text-[#778279]">Engineer by training. Builder by practice.</p></div>
+                <span className="shrink-0 rounded-full bg-[#edf5ef] px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-[#176b43]">SS / 01</span>
               </div>
-
-              <Divider />
-            </Section>
-
-            {/* =====================================================
-                CORE TECHNOLOGIES
-            ====================================================== */}
-
-            <Section>
-              <SectionHeading>Core Technologies</SectionHeading>
-
-              <ul className="flex flex-wrap gap-2 sm:gap-3">
-                {techonologyIconList.map(
-                  ({ name, icon }: iconType, index: number) => (
-                    <Tooltip key={index} content={name} placement="top">
-                      <motion.li
-                        whileHover={{
-                          scale: 1.04,
-                          y: -2,
-                        }}
-                        whileTap={{
-                          scale: 0.96,
-                        }}
-                        className="flex max-w-full cursor-default items-center gap-2 rounded-full bg-cyan-400/10 px-3 py-2 text-xs font-medium text-cyan-300 ring-1 ring-inset ring-cyan-400/20 transition-shadow hover:shadow-[0_0_20px_rgba(34,211,238,0.15)] sm:px-4 sm:text-sm"
-                      >
-                        <span className="shrink-0 text-base sm:text-xl">
-                          {icon}
-                        </span>
-
-                        <span className="truncate">{name}</span>
-                      </motion.li>
-                    </Tooltip>
-                  ),
-                )}
-              </ul>
-
-              <Divider />
-            </Section>
-
-            {/* =====================================================
-                ENGINEERING BACKGROUND
-            ====================================================== */}
-
-            <Section>
-              <SectionHeading>Engineering Background</SectionHeading>
-
-              <div className="relative overflow-hidden">
-                {/* TIMELINE */}
-
-                <div className="absolute bottom-0 left-2.5 top-0 w-px bg-gradient-to-b from-cyan-400/40 via-slate-700/40 to-transparent sm:left-3" />
-
-                <div className="relative pl-8 sm:pl-10">
-                  {/* TIMELINE DOT */}
-
-                  <div className="absolute left-[6px] top-1.5 h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)] sm:left-[5px] sm:h-2 sm:w-2" />
-
-                  <p className="text-xs font-semibold uppercase tracking-wider text-cyan-400 sm:text-sm">
-                    Telecommunication Engineering
-                  </p>
-
-                  <h3 className="mt-2 text-lg font-semibold leading-7 text-slate-200 sm:text-xl">
-                    Systems Thinking Beyond Software
-                  </h3>
-
-                  <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-400 sm:mt-4">
-                    My engineering background gives me a broader understanding
-                    of computer networks, communication systems, embedded
-                    devices, and connected technologies. This perspective helps
-                    me understand not only the software layer, but also how
-                    systems communicate and operate in the real world.
-                  </p>
-
-                  {/* ENGINEERING SKILLS */}
-
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {[
-                      "Computer Networks",
-                      "Communication Systems",
-                      "Embedded Systems",
-                      "IoT",
-                      "Connected Devices",
-                    ].map((engineeringSkill) => (
-                      <span
-                        key={engineeringSkill}
-                        className="rounded-full border border-cyan-400/10 bg-cyan-400/5 px-3 py-1.5 text-[11px] leading-4 text-cyan-300 sm:text-xs"
-                      >
-                        {engineeringSkill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <Divider />
-            </Section>
-
-            {/* =====================================================
-                WHAT I BRING
-            ====================================================== */}
-
-            <Section>
-              <SectionHeading>What I Bring</SectionHeading>
-
-              <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-3">
-                <ValueCard
-                  title="Full-Stack Thinking"
-                  description="I understand how frontend interfaces, backend services, APIs, databases, and users fit together as one complete system."
-                />
-
-                <ValueCard
-                  title="Security Mindset"
-                  description="I consider security during development and continuously build my skills in ethical hacking and penetration testing."
-                />
-
-                <ValueCard
-                  title="Systems Perspective"
-                  description="My engineering background helps me approach software problems with an understanding of networks, devices, and system interactions."
-                />
-              </div>
-            </Section>
-
-            {/* =====================================================
-                FINAL CTA
-            ====================================================== */}
-
-            <motion.section
-              initial={{
-                opacity: 0,
-                y: 25,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-              }}
-              viewport={{
-                once: true,
-              }}
-              className="pb-6 pt-2 sm:pb-10 sm:pt-4"
-            >
-              <div className="w-full overflow-hidden rounded-2xl border border-cyan-400/10 bg-cyan-400/[0.03] p-6 text-center sm:p-8 md:p-10">
-                <p className="text-xs font-medium uppercase tracking-[0.2em] text-cyan-400 sm:text-sm sm:tracking-widest">
-                  Let&apos;s build something useful
-                </p>
-
-                <h2 className="mt-3 text-xl font-semibold leading-8 text-slate-100 sm:text-2xl md:text-3xl">
-                  Explore what I&apos;ve built.
-                </h2>
-
-                <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-slate-400">
-                  Take a look at my projects to see how I apply software
-                  engineering, systems thinking, and security-conscious
-                  development to real-world problems.
-                </p>
-
-                <div className="mt-6">
-                  <Link
-                    href="/projects"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-6 py-3 text-sm font-medium text-cyan-300 transition-all duration-300 hover:bg-cyan-400/20 sm:w-auto"
-                  >
-                    Explore Projects
-                    <span>→</span>
-                  </Link>
-                </div>
-              </div>
-            </motion.section>
-          </main>
+            </div>
+            <div className="absolute -bottom-7 -left-8 hidden rounded-2xl border border-[#e1e9e1] bg-white px-5 py-4 shadow-lg sm:block">
+              <p className="eyebrow">Approach</p><p className="mt-1 text-sm font-semibold text-[#26372b]">Think in systems.</p><p className="text-sm text-[#657168]">Build for people.</p>
+            </div>
+          </motion.div>
         </div>
-      </div>
+      </section>
+
+      <section className="border-y border-[#e5eae5] bg-white">
+        <div className="site-shell grid gap-8 py-16 md:grid-cols-[.65fr_1.35fr] md:py-20">
+          <div><p className="eyebrow">What I work on</p><h2 className="mt-4 max-w-xs text-3xl font-semibold leading-[1.08] tracking-[-.045em] text-[#17231c] sm:text-4xl">From the first screen to the systems behind it.</h2></div>
+          <div className="grid gap-0 sm:grid-cols-2">
+            {capabilities.map((item, i) => <div key={item.number} className={`border-[#e5eae5] py-5 ${i < 2 ? "border-b" : ""} ${i % 2 === 0 ? "sm:pr-8 sm:border-r" : "sm:pl-8"}`}>
+              <span className="text-xs font-bold text-[#176b43]">{item.number}</span><h3 className="mt-3 text-lg font-semibold text-[#17231c]">{item.title}</h3><p className="mt-2 text-sm leading-6 text-[#69756d]">{item.detail}</p>
+            </div>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="site-shell py-20 sm:py-28">
+        <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div><p className="eyebrow">Selected work</p><h2 className="display-heading mt-4 text-4xl font-semibold text-[#17231c] sm:text-5xl">Built to solve<br/>something real.</h2></div>
+          <Link href="/projects" className="text-link text-sm">View all projects <span>↗</span></Link>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {featured.map((project, index) => (
+            <Link href="/projects" key={project.title} className="group">
+              <div className={`project-media relative ${project.mediaType === "mobile" ? "aspect-[4/5] bg-[#e8f0e9] p-4 sm:p-6" : "aspect-[16/10]"}`}>
+                <Image src={project.imgUrl} alt={`${project.title} interface preview`} fill sizes="(max-width: 768px) 100vw, 50vw" className={`${project.mediaType === "mobile" ? "object-contain drop-shadow-[0_16px_18px_rgba(23,62,42,.16)]" : "object-cover"} transition-transform duration-700 group-hover:scale-[1.035]`} />
+                <span className="absolute left-4 top-4 rounded-full border border-white/70 bg-white/90 px-3 py-1.5 text-[10px] font-bold tracking-wider text-[#176b43]">0{index + 1}</span>
+              </div>
+              <div className="flex items-start justify-between gap-4 pt-4">
+                <div><p className="text-xs font-semibold uppercase tracking-[.12em] text-[#176b43]">{project.subtitle}</p><h3 className="mt-2 text-xl font-semibold tracking-tight text-[#17231c] group-hover:text-[#176b43]">{project.title}</h3></div>
+                <span className="mt-1 text-xl text-[#176b43] transition-transform group-hover:translate-x-1">↗</span>
+              </div>
+              <p className="mt-2 line-clamp-2 text-sm leading-6 text-[#69756d]">{project.description}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-[#f0f5f0]">
+        <div className="site-shell grid gap-8 py-16 md:grid-cols-[1fr_auto] md:items-center md:py-20">
+          <div><p className="eyebrow">A little about my approach</p><h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-[-.045em] text-[#17231c] sm:text-4xl">Good software is more than code that runs.</h2><p className="mt-4 max-w-2xl text-sm leading-7 text-[#657168]">I care about understanding the problem, making sound technical decisions and building products that are clear to use, dependable in practice and straightforward to evolve.</p></div>
+          <Link href="/about" className="outline-button w-fit">More about me <span>↗</span></Link>
+        </div>
+      </section>
+
+      <section className="site-shell py-20 sm:py-28">
+        <div className="rounded-[24px] bg-[#173e2a] px-7 py-12 text-white sm:px-12 sm:py-16">
+          <p className="text-xs font-bold uppercase tracking-[.18em] text-[#a9d5b5]">Have a product in mind?</p>
+          <div className="mt-5 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+            <h2 className="max-w-2xl text-4xl font-semibold tracking-[-.055em] sm:text-5xl">Let&apos;s make something useful.</h2>
+            <Link href="/Contact" className="inline-flex w-fit items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#173e2a] transition hover:bg-[#eaf3eb]">Start a conversation <span>↗</span></Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
-
-/* =====================================================
-   SECTION
-===================================================== */
-
-const Section = ({ children }: { children: React.ReactNode }) => {
-  const ref = useRef(null);
-
-  const isInView = useInView(ref, {
-    once: true,
-    margin: "-80px 0px",
-  });
-
-  return (
-    <motion.section
-      ref={ref}
-      initial={{
-        opacity: 0,
-        y: 30,
-      }}
-      animate={
-        isInView
-          ? {
-              opacity: 1,
-              y: 0,
-            }
-          : {
-              opacity: 0,
-              y: 30,
-            }
-      }
-      transition={{
-        duration: 0.6,
-        ease: "easeOut",
-      }}
-      className="w-full"
-    >
-      {children}
-    </motion.section>
-  );
-};
-
-/* =====================================================
-   SECTION HEADING
-===================================================== */
-
-const SectionHeading = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-slate-500 sm:mb-6 sm:text-sm sm:tracking-widest">
-      {children}
-    </h3>
-  );
-};
-
-/* =====================================================
-   DIVIDER
-===================================================== */
-
-const Divider = () => (
-  <div className="mt-12 h-px w-full bg-gradient-to-r from-transparent via-slate-700/30 to-transparent sm:mt-16" />
-);

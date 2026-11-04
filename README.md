@@ -1,46 +1,25 @@
-# Portfolio
+# Salam Sodiq — Software Engineering Portfolio
 
-<a href="https://devyinka.github.io/" target="_blank">Live Demo</a>
+A light editorial redesign of the existing Next.js portfolio.
 
-My personal portfolio showcasing my skills, projects, and experience as a developer. Built with modern web technologies.
+## Stack
+- Next.js App Router
+- React + TypeScript
+- Tailwind CSS
+- Framer Motion
+- Existing project data, media and contact API
 
-## Author
+## Run locally
+1. Install Node.js (use a version compatible with the installed Next.js release).
+2. Run `npm install`.
+3. Copy `.env.example` to `.env` and enter your Gmail address and Gmail App Password.
+4. Run `npm run dev` and open `http://localhost:3000`.
 
-**devyinka**
+## Important environment-file note
+Environment files are intentionally excluded from this archive and ignored by Git. Restore the required email service variables locally before testing the contact form. Never commit API keys, passwords or SMTP credentials.
 
-- Repository: "devyinka.github.io"
-- Released on "GitHub Pages"
-- GitHub: "https://github.com/devyinka"
-
-## Installation
-
-```bash
-npm i
-# or
-npm install
-# Install node modules
-```
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-# Run project
-```
-
-## Video Performance Tips
-
-- Prefer short preview clips instead of full-length videos.
-- Encode previews at 720p H.264 + AAC with a lower bitrate (e.g., 1.5-2.5 Mbps).
-- Host videos on a CDN like Cloudinary and use the CDN URL in `videoUrl`.
-
-## Built with
-
-- Next 13
-- NextUI
-- Tailwind
-- Motion one
+## Before deployment
+- Verify the project descriptions and live links.
+- Test the contact form with valid email-service environment variables.
+- Run `npm run build`.
+- Check all routes on mobile and desktop.

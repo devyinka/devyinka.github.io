@@ -1,179 +1,50 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
-
 import { ProjectList } from "@/utils/projectList";
-import { ProjectType, TechnologyType } from "@/types";
-import { GithubSVG, LinkSVG } from "@/components/ui/icons";
+import type { ProjectType } from "@/types";
+import { ProjectMedia } from "@/components/ProjectMedia";
 
 export default function Projects() {
   return (
-    <div className="bg-[#0a0a0a] min-h-screen text-slate-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 py-20 px-6">
-      <div className="mx-auto flex max-w-7xl flex-col gap-24">
-        {/* Page Header */}
-        <div className="mb-10 text-center lg:text-left">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-200 tracking-tight">
-            Featured Architecture
-          </h1>
-          <p className="text-slate-400 mt-4 text-lg max-w-2xl">
-            A selection of backend systems, robust APIs, and cross-platform
-            applications I have engineered, focusing on secure pipelines and
-            scalable data structures.
-          </p>
-        </div>
-
-        {/* Using project.title as the unique key */}
-        {ProjectList.map((project, index) => (
-          <ProjectCard
-            key={`project-${project.title.replace(/\s+/g, "-")}`}
-            project={project}
-            index={index}
-          />
-        ))}
-      </div>
-      <div className="mt-12 text-center">
-        <p className="text-slate-400 mb-6">
-          Interested in working together on secure architectures?
+    <div className="site-shell py-16 sm:py-24">
+      <header className="max-w-3xl pb-14 sm:pb-20">
+        <p className="eyebrow">Selected work · 2024—2026</p>
+        <h1 className="display-heading mt-5 max-w-[12ch] text-5xl font-semibold text-[#17231c] sm:text-7xl">Projects with<br/><span className="text-[#176b43]">a purpose.</span></h1>
+        <p className="mt-7 max-w-2xl text-base leading-8 text-[#657168] sm:text-lg">
+          A collection of products and engineering projects across web, mobile, backend systems, machine learning and hardware integration. Each one represents a problem explored and a solution built.
         </p>
-        <Link
-          href="/Contact"
-          className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-medium transition-colors shadow-lg"
-        >
-          Get In Touch
-        </Link>
+      </header>
+      <div className="space-y-20 sm:space-y-28">
+        {ProjectList.map((project, index) => <ProjectCard key={project.title} project={project} index={index} />)}
       </div>
+      <section className="mt-24 rounded-[22px] bg-[#f0f5f0] px-7 py-12 text-center sm:px-12">
+        <p className="eyebrow">Have a challenge?</p>
+        <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#17231c] sm:text-4xl">Let&apos;s talk about what you&apos;re building.</h2>
+        <Link href="/Contact" className="green-button mt-7">Get in touch <span>↗</span></Link>
+      </section>
     </div>
   );
 }
 
-// Individual Project Card Component
-const ProjectCard = ({
-  project,
-  index,
-}: {
-  project: ProjectType;
-  index: number;
-}) => {
-  const {
-    description,
-    title,
-    subtitle,
-    icon,
-    imgUrl,
-    videoUrl,
-    technologies,
-    githubUrl,
-    websiteUrl,
-  } = project;
-
-  const ref = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null); // Ref for controlling the video
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-
-  // Alternate the layout based on whether the index is even or odd
-  const isEven = index % 2 === 0;
-
-  // Handle the delayed video playback
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-
-    if (isInView && videoRef.current) {
-      // 6000ms = 6 seconds. Change to 10000 for 10 seconds.
-      timeout = setTimeout(() => {
-        videoRef.current?.play().catch((err) => {
-          console.log("Playback failed:", err);
-        });
-      }, 6000);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [isInView]);
-
+function ProjectCard({ project, index }: { project: ProjectType; index: number }) {
+  const reversed = index % 2 === 1;
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      className={`flex flex-col gap-8 lg:items-center ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"}`}
-    >
-      {/* Video/Image Section */}
-      <div className="glass-surface relative aspect-video w-full overflow-hidden rounded-2xl group lg:w-1/2">
-        <video
-          ref={videoRef}
-          className="h-full w-full bg-slate-950 object-contain opacity-80 transition-opacity duration-500 group-hover:opacity-100"
-          loop
-          muted
-          playsInline
-          poster={imgUrl}
-          onCanPlay={() => setIsVideoLoaded(true)}
-          src={isInView ? videoUrl : undefined}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 to-transparent pointer-events-none" />
+    <article className={`grid items-center gap-8 lg:grid-cols-2 lg:gap-14 ${reversed ? "lg:[&>*:first-child]:order-2" : ""}`}>
+      <div className="min-w-0">
+        <ProjectMedia title={project.title} imageUrl={project.imgUrl} videoUrl={project.videoUrl} mobile={project.mediaType === "mobile"} index={index} />
       </div>
-
-      {/* Content Section */}
-      <div className="w-full lg:w-1/2 flex flex-col gap-5">
-        <div className="flex items-center gap-3 text-cyan-400">
-          <span className="p-2 bg-cyan-950/30 rounded-lg border border-cyan-900/50">
-            {icon}
-          </span>
-          <span className="text-sm font-semibold tracking-widest uppercase text-cyan-500">
-            {subtitle}
-          </span>
+      <div className="flex flex-col items-start">
+        <p className="eyebrow">{project.subtitle}</p>
+        <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-.045em] text-[#17231c] sm:text-4xl">{project.title}</h2>
+        <p className="mt-5 text-sm leading-7 text-[#657168] sm:text-base">{project.description}</p>
+        <div className="mt-6 flex flex-wrap gap-2">
+          {project.technologies.map((tech, i) => <span key={`${tech.name}-${i}`} className="inline-flex items-center gap-2 rounded-full border border-[#e2e9e2] bg-white px-3 py-2 text-xs font-medium text-[#536157]">{tech.icon}{tech.name}</span>)}
         </div>
-
-        <h2 className="text-3xl font-bold text-slate-100">{title}</h2>
-
-        <div className="p-6 rounded-xl bg-slate-800/30 border border-slate-700/50 backdrop-blur-sm">
-          <p className="text-slate-300 leading-relaxed text-md lg:text-lg">
-            {description}
-          </p>
-        </div>
-
-        {/* Tech Stack Chips */}
-        <div className="flex flex-wrap gap-3 mt-2">
-          {technologies.map(({ name, icon }: TechnologyType, idx: number) => (
-            <div
-              key={`${title}-tech-${idx}`}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-700 text-sm font-medium text-slate-300 hover:text-cyan-300 hover:border-cyan-700 transition-colors"
-            >
-              {icon}
-              <span>{name}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Links / Action Buttons */}
-        <div className="flex gap-4 mt-4">
-          {websiteUrl ? (
-            <Link
-              href={websiteUrl}
-              target="_blank"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-medium transition-colors"
-            >
-              <LinkSVG />
-              Live Deployment
-            </Link>
-          ) : (
-            <div className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-800 text-slate-400 font-medium cursor-not-allowed">
-              coming soon
-            </div>
-          )}
-          {githubUrl && (
-            <Link
-              href={githubUrl}
-              target="_blank"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white border border-slate-600 font-medium transition-colors"
-            >
-              <GithubSVG color="#ffffff" size={20} />
-              Source Code
-            </Link>
-          )}
+        <div className="mt-8 flex flex-wrap gap-3">
+          {project.websiteUrl ? <a href={project.websiteUrl} target="_blank" rel="noreferrer" className="green-button">View project <span>↗</span></a> : <span className="rounded-full bg-[#f0f5f0] px-5 py-3 text-xs font-semibold text-[#657168]">In development</span>}
+          {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noreferrer" className="outline-button">Source code <span>↗</span></a>}
         </div>
       </div>
-    </motion.div>
+    </article>
   );
-};
+}

@@ -1,174 +1,47 @@
-"use client";
-import { useRef } from "react";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
-import { educationList } from "@/utils";
-import { educationType } from "@/types";
+import { educationList } from "@/utils/educationList";
 import { languageList } from "@/utils/languageData";
+
+const principles = [
+  ["Understand the problem", "I start by understanding the people, constraints and real-world workflow behind a feature—not just the screen that needs to be built."],
+  ["Think across the system", "I consider how interfaces, APIs, data models, integrations and infrastructure work together as one product."],
+  ["Build for change", "I value clear structure, maintainable code and practical decisions that make a product easier to improve."],
+];
 
 export default function About() {
   return (
-    <div className="bg-[#0a0a0a] min-h-screen text-slate-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 py-24 px-6 relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <div className="absolute top-[10%] right-[-5%] h-[500px] w-[500px] rounded-full bg-cyan-900/20 blur-[120px]" />
-      </div>
+    <div className="site-shell py-16 sm:py-24">
+      <header className="max-w-3xl pb-16 sm:pb-20">
+        <p className="eyebrow">About me</p>
+        <h1 className="display-heading mt-5 max-w-[12ch] text-5xl font-semibold text-[#17231c] sm:text-7xl">An engineer&apos;s<br/><span className="text-[#176b43]">way of thinking.</span></h1>
+        <div className="mt-8 space-y-5 text-base leading-8 text-[#657168]">
+          <p>I&apos;m Salam Sodiq, a software engineer focused on building web applications, mobile products and the backend systems that power them. I enjoy taking an idea from an early requirement to a working product—planning how its parts fit together, implementing the experience and solving the engineering challenges along the way.</p>
+          <p>My background is in Telecommunication Engineering. It shaped how I think about networks, connected devices and the movement of information across systems. I bring that systems-level perspective into software development, particularly when working across application architecture, APIs, data and integrations.</p>
+          <p>I&apos;m self-taught in software development, with a foundation in C and C++ and practical experience across JavaScript, TypeScript, React, Next.js, Node.js, Express, databases and React Native. I value learning unfamiliar technologies by understanding how they work and applying them to real problems.</p>
+        </div>
+      </header>
 
-      <div className="max-w-4xl mx-auto relative z-10 flex flex-col gap-24">
-        {/* Page Header */}
-        <Section>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-100 tracking-tight mb-8">
-            About Me
-          </h1>
-          <div className="flex flex-col gap-6 text-lg leading-relaxed text-slate-400">
-            <p>
-              I&apos;m Salam Sodiq, a full-stack software developer focused on
-              building reliable web applications, APIs, and backend systems. I
-              enjoy turning real-world requirements into practical software that
-              is maintainable, efficient, and easy to use.
-            </p>
-            <p>
-              My background in Telecommunication Engineering gives me a strong
-              foundation in computer networks, communication systems, and
-              understanding how data moves across connected systems. I bring
-              that systems-level perspective into software development, with a
-              particular interest in application architecture, networking,
-              security, and system reliability.
-            </p>
-            <p>
-              I developed my software engineering skills independently, starting
-              with C and C++ before moving into modern web and mobile
-              development. Today, I work with technologies such as React,
-              Next.js, Node.js, Express, databases, and React Native to build
-              full-stack and mobile applications.
-            </p>
-            <p>
-              {" "}
-              One of the things I value most about engineering is the ability to
-              learn unfamiliar technologies. When I encounter a new framework,
-              library, or system, I break it down, understand how its components
-              work together, and turn that understanding into working
-              software.{" "}
-            </p>
-            <p>
-              My goal is to grow as a professional software engineer while
-              building systems that solve meaningful problems. I&apos;m
-              particularly interested in opportunities where I can contribute
-              across the frontend and backend, work with experienced engineers,
-              and continue developing strong software engineering practices.
-            </p>
-          </div>
-        </Section>
+      <section className="section-rule grid gap-8 py-14 md:grid-cols-[.7fr_1.3fr]">
+        <div><p className="eyebrow">How I approach engineering</p><h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#17231c]">The work behind<br/>the work.</h2></div>
+        <div className="space-y-7">{principles.map(([title, detail], i) => <div key={title} className="grid gap-3 sm:grid-cols-[48px_1fr]"><span className="text-xs font-bold text-[#176b43]">0{i + 1}</span><div><h3 className="text-lg font-semibold text-[#17231c]">{title}</h3><p className="mt-2 text-sm leading-7 text-[#657168]">{detail}</p></div></div>)}</div>
+      </section>
 
-        {/* Education & Experience */}
-        <Section>
-          <h2 className="text-2xl font-bold text-slate-200 mb-8 border-b border-slate-800 pb-4">
-            Academic & Professional Journey
-          </h2>
-          <div className="flex flex-col gap-8 border-l border-cyan-900/50 pl-6 ml-2">
-            {educationList.map((item, index) => (
-              <div key={index} className="relative group">
-                <div className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-slate-800 border-2 border-cyan-500 group-hover:bg-cyan-400 transition-colors" />
-                <h3 className="text-xl font-semibold text-slate-200 mt-1">
-                  {item.title}
-                </h3>
-                {item.subtitle && (
-                  <span className="block text-sm font-bold tracking-widest text-cyan-600 uppercase mt-1">
-                    {item.subtitle}
-                  </span>
-                )}
-                <p className="text-slate-400 mt-2 leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Section>
+      <section className="section-rule grid gap-8 py-14 md:grid-cols-[.7fr_1.3fr]">
+        <div><p className="eyebrow">Education</p><h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#17231c]">Academic journey.</h2></div>
+        <div className="space-y-7 border-l border-[#dce5dd] pl-6">{educationList.map((item, i) => <div key={`${item.title}-${i}`} className="relative"><span className="absolute -left-[29px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-[#176b43] ring-1 ring-[#176b43]" /><h3 className="text-lg font-semibold text-[#17231c]">{item.title}</h3>{item.subtitle && <p className="mt-1 text-xs font-bold uppercase tracking-widest text-[#176b43]">{item.subtitle}</p>}<p className="mt-2 text-sm leading-7 text-[#657168]">{item.description}</p></div>)}</div>
+      </section>
 
-        {/* Languages & Personal Depth */}
-        <Section>
-          <h2 className="text-2xl font-bold text-slate-200 mb-8 border-b border-slate-800 pb-4">
-            Beyond the Code
-          </h2>
+      <section className="section-rule grid gap-8 py-14 md:grid-cols-[.7fr_1.3fr]">
+        <div><p className="eyebrow">Beyond software</p><h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#17231c]">Curiosity outside<br/>the code.</h2></div>
+        <div className="grid gap-8 sm:grid-cols-2">
+          <div><h3 className="text-base font-semibold text-[#17231c]">Languages</h3><div className="mt-4 space-y-4">{languageList.map((lang, i) => <div key={`${lang.title}-${i}`}><p className="text-sm font-semibold text-[#26372b]">{lang.title}</p><p className="mt-1 text-xs leading-6 text-[#657168]">{lang.description}</p></div>)}</div></div>
+          <div><h3 className="text-base font-semibold text-[#17231c]">A wider perspective</h3><p className="mt-4 text-sm leading-7 text-[#657168]">I enjoy learning, exploring how complex systems work and finding clear ways to explain them. My interests also include agriculture, connected technology and stories built around strategy and investigation.</p></div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Languages Map */}
-            <div>
-              <h3 className="text-lg font-semibold text-cyan-400 mb-4">
-                Linguistics
-              </h3>
-              <div className="flex flex-col gap-4">
-                {languageList.map((lang, index) => (
-                  <div key={index}>
-                    <span className="font-medium text-slate-200">
-                      {lang.title}
-                    </span>
-                    <p className="text-sm text-slate-400">{lang.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Personal Context */}
-            <div className="text-slate-400 leading-relaxed space-y-4">
-              <p>
-                {" "}
-                I enjoy understanding complex systems and explaining them
-                clearly. That mindset influences how I approach software
-                architecture, debugging, documentation, and collaboration.{" "}
-              </p>{" "}
-              <p>
-                {" "}
-                Outside software development, I enjoy stories built around
-                strategy, investigation, and complex problem-solving. I&apos;m
-                particularly drawn to anime such as <i>
-                  Moriarty the Patriot
-                </i>{" "}
-                and <i>Terror in Resonance</i>.{" "}
-              </p>
-            </div>
-          </div>
-        </Section>
-
-        {/* Call to Action */}
-        <Section>
-          <div className="glass-surface mt-8 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-slate-200 mb-4">
-              {" "}
-              Explore My Projects{" "}
-            </h3>
-            <p className="text-slate-400 mb-8 max-w-lg mx-auto">
-              {" "}
-              See how I turn real-world requirements into full-stack
-              applications, APIs, mobile applications, and integrated software
-              systems.{" "}
-            </p>
-            <Link
-              href="/projects"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-medium transition-all hover:scale-105 shadow-[0_0_20px_rgba(8,145,178,0.4)]"
-            >
-              View Projects
-            </Link>
-          </div>
-        </Section>
-      </div>
+      <section className="mt-12 rounded-[22px] bg-[#173e2a] px-7 py-12 text-white sm:px-12">
+        <p className="text-xs font-bold uppercase tracking-[.18em] text-[#a9d5b5]">Explore the work</p><h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">The best way to understand how I work is to see what I&apos;ve built.</h2><Link href="/projects" className="mt-7 inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#173e2a]">View projects ↗</Link>
+      </section>
     </div>
   );
 }
-
-// Reusable Scroll Reveal Component
-const Section = ({ children }: { children: React.ReactNode }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  return (
-    <motion.section
-      ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-    >
-      {children}
-    </motion.section>
-  );
-};

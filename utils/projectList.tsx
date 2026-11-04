@@ -27,8 +27,8 @@ import { ProjectType } from "../types";
 export const ProjectList: ProjectType[] = [
   {
     icon: <PestDetectionSVG />,
-    title: "Intelligent System For early pest disease detection in bean Farm",
-    subtitle: "IoT-Based Monitoring & Machine Learning Detection",
+    title: "Bean Farm Pest & Disease Monitoring",
+    subtitle: "IoT Monitoring · Machine Learning",
     technologies: [
       {
         name: "Typescript",
@@ -169,6 +169,7 @@ export const ProjectList: ProjectType[] = [
       "True Estate is a multi-role property management platform and real estate marketplace designed to simplify property operations and rental management. The platform provides dedicated experiences for landlords, agents, tenants, and property technicians, with role-based access and workflows tailored to each user. Landlords can manage their properties, units, tenant relationships, and property operations, while agents can manage assigned properties and support rental activities across their authorized relationships. Tenants have access to their tenancy information and related property services, while technicians can handle assigned maintenance tasks. The platform also introduces a property marketplace where landlords can list available rental properties for prospective tenants and agents to discover. the system is being developed with a focus on structured property management, real-time communication, and scalable multi-role architecture.",
     imgUrl:
       "https://res.cloudinary.com/dnowbob2t/image/upload/v1793743299/trueEstate_kycdfc.jpg",
+    mediaType: "mobile",
     videoUrl:
       "https://res.cloudinary.com/dnowbob2t/video/upload/v1793743686/TrueEstate_ois6v9.mp4",
     githubUrl: "https://github.com/devyinka/TruesEstateApp",
@@ -196,6 +197,7 @@ export const ProjectList: ProjectType[] = [
       "Built a cross-platform restaurant discovery application with React Native, Express, and MongoDB. Developed the mobile interface and backend APIs for restaurant search, geolocation, user authentication, and saved locations. Integrated TomTom geolocation services and Node Geocoder for location mapping, with Firebase authentication for secure user access and synchronized data.",
     imgUrl:
       "https://res.cloudinary.com/dnowbob2t/image/upload/v1788937870/Restuarantnew_ger3a2.png",
+    mediaType: "mobile",
     videoUrl:
       "https://res.cloudinary.com/daauphnqb/video/upload/v1770652825/Restuarantnew_el3esg.mp4",
     githubUrl: "https://github.com/devyinka/Restaurant-finder",

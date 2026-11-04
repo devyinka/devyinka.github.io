@@ -3,27 +3,33 @@ import "./globals.css";
 import { NavbarSection } from "@/components/ui/Navbar";
 
 export const metadata: Metadata = {
-  title: "Salam Sodiq | devyinka",
-  description: "Backend Systems, Mobile & Cyber Security Engineer",
+  title: "Salam Sodiq | Software Engineer",
+  description:
+    "Salam Sodiq is a software engineer building web applications, mobile products, backend systems and connected solutions.",
+  metadataBase: new URL("https://salamsodiq.me"),
+  openGraph: {
+    title: "Salam Sodiq | Software Engineer",
+    description: "Building useful software across web, mobile and connected systems.",
+    url: "https://salamsodiq.me",
+    siteName: "Salam Sodiq",
+    type: "website",
+  },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="relative bg-[#0a0a0a] font-sans text-slate-300">
-        {/* Floating Navbar locked to the top center */}
-        <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
-          <div className="pointer-events-auto">
-            <NavbarSection />
-          </div>
+      <body>
+        <header className="sticky top-0 z-50 border-b border-[#e8ede8]/90 bg-[#fbfcfa]/90 backdrop-blur-xl">
+          <NavbarSection />
         </header>
-
-        {/* Main Content with top padding so it clears the fixed navbar */}
-        <main className="pt-28">{children}</main>
+        <main>{children}</main>
+        <footer className="border-t border-[#e5eae5]">
+          <div className="site-shell flex flex-col gap-3 py-8 text-xs text-[#758078] sm:flex-row sm:items-center sm:justify-between">
+            <span>© {new Date().getFullYear()} Salam Sodiq. Built with intention.</span>
+            <span>Software engineering · Web · Mobile · Systems</span>
+          </div>
+        </footer>
       </body>
     </html>
   );

@@ -1,167 +1,41 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { contactData } from "@/utils";
+import { contactData } from "@/utils/contactData";
 import { Form } from "@/components/Form";
-import { MailSVG, GithubSVG, LinkedInSVG } from "@/components/ui/icons/";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
 
 export default function Contact() {
-  const { email, github, linkedIn } = contactData;
-
   return (
-    <div className="min-h-screen bg-[#0a0a0a] px-6 py-24">
-      <div className="mx-auto max-w-3xl">
-        {/* Header */}
-        <div className="mb-14">
-          <h1 className="text-4xl font-bold tracking-tight text-slate-100 md:text-5xl">
-            Let&apos;s Connect
-          </h1>
-
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-400">
-            Let&apos;s talk about building reliable web applications,
-            cross-platform mobile apps, backend systems, reliable database
-            Architecture, intelligent solutions, and connected IoT products.
-          </p>
-        </div>
-
-        {/* Contact Links */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-50px" }}
-          className="space-y-3"
-        >
-          {/* Email */}
-          <motion.div variants={itemVariants}>
-            <Link
-              href={`mailto:${email}?subject=Hello from your portfolio`}
-              className="glass-surface group flex items-center justify-between gap-4 rounded-xl px-5 py-4 transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-950/20"
-            >
-              <div className="flex min-w-0 items-center gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-cyan-950/50 text-cyan-400 transition-transform duration-300 group-hover:scale-105">
-                  <MailSVG />
-                </div>
-
-                <div className="min-w-0">
-                  <h3 className="font-semibold text-slate-100">Email Me</h3>
-
-                  <p className="mt-0.5 truncate text-sm text-slate-500">
-                    {email}
-                  </p>
-                </div>
-              </div>
-
-              <span className="text-lg text-slate-600 transition-all duration-300 group-hover:translate-x-1 group-hover:text-cyan-400">
-                →
-              </span>
-            </Link>
-          </motion.div>
-
-          {/* GitHub */}
-          <motion.div variants={itemVariants}>
-            <Link
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-surface group flex items-center justify-between gap-4 rounded-xl px-5 py-4 transition-all duration-300 hover:border-slate-500 hover:bg-slate-900/50"
-            >
-              <div className="flex min-w-0 items-center gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-slate-800/70 transition-transform duration-300 group-hover:scale-105">
-                  <GithubSVG color="#ffffff" size={25} />
-                </div>
-
-                <div className="min-w-0">
-                  <h3 className="font-semibold text-slate-100">GitHub</h3>
-
-                  <p className="mt-0.5 truncate text-sm text-slate-500">
-                    Projects, source code, and technical work
-                  </p>
-                </div>
-              </div>
-
-              <span className="text-lg text-slate-600 transition-all duration-300 group-hover:translate-x-1 group-hover:text-slate-300">
-                ↗
-              </span>
-            </Link>
-          </motion.div>
-
-          {/* LinkedIn */}
-          <motion.div variants={itemVariants}>
-            <Link
-              href={linkedIn}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-surface group flex items-center justify-between gap-4 rounded-xl px-5 py-4 transition-all duration-300 hover:border-[#0077b5]/60 hover:bg-slate-900/50"
-            >
-              <div className="flex min-w-0 items-center gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#0077b5]/10 transition-transform duration-300 group-hover:scale-105">
-                  <LinkedInSVG />
-                </div>
-
-                <div className="min-w-0">
-                  <h3 className="font-semibold text-slate-100">LinkedIn</h3>
-
-                  <p className="mt-0.5 truncate text-sm text-slate-500">
-                    Connect with me professionally
-                  </p>
-                </div>
-              </div>
-
-              <span className="text-lg text-slate-600 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#0077b5]">
-                ↗
-              </span>
-            </Link>
-          </motion.div>
-        </motion.div>
-
-        {/* Message Form */}
-        <motion.div
-          variants={itemVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-50px" }}
-          className="glass-surface mt-14 rounded-2xl p-6 sm:p-8"
-        >
-          <div className="mb-7">
-            <h2 className="text-2xl font-bold text-slate-100">
-              Start a Conversation
-            </h2>
-
-            <p className="mt-2 text-slate-500">
-              Have a project, idea, or technical challenge in mind? Send me a
-              message and let&apos;s talk.
-            </p>
+    <div className="site-shell py-16 sm:py-24">
+      <header className="max-w-3xl pb-14 sm:pb-20">
+        <p className="eyebrow">Contact</p>
+        <h1 className="display-heading mt-5 max-w-[12ch] text-5xl font-semibold text-[#17231c] sm:text-7xl">Good work starts<br/><span className="text-[#176b43]">with a conversation.</span></h1>
+        <p className="mt-7 max-w-2xl text-base leading-8 text-[#657168] sm:text-lg">Whether you&apos;re hiring, exploring a collaboration or have a product idea to discuss, I&apos;d be glad to hear from you.</p>
+      </header>
+      <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
+        <aside className="space-y-4">
+          <div className="editorial-card p-5">
+            <p className="eyebrow">Email</p>
+            <Link href={`mailto:${contactData.email}`} className="mt-3 block break-all text-base font-semibold text-[#17231c] hover:text-[#176b43]">{contactData.email}</Link>
+            <p className="mt-2 text-xs text-[#78837b]">Best for opportunities and detailed enquiries.</p>
           </div>
-
+          <div className="editorial-card p-5">
+            <p className="eyebrow">Professional network</p>
+            <div className="mt-3 flex flex-wrap gap-4 text-sm font-semibold">
+              <Link href={contactData.linkedIn} target="_blank" rel="noreferrer" className="text-link">LinkedIn ↗</Link>
+              <Link href={contactData.github} target="_blank" rel="noreferrer" className="text-link">GitHub ↗</Link>
+              <Link href={contactData.x} target="_blank" rel="noreferrer" className="text-link">X ↗</Link>
+            </div>
+          </div>
+          <div className="soft-panel p-5">
+            <p className="text-sm font-semibold text-[#24412e]">What I&apos;m interested in</p>
+            <p className="mt-2 text-sm leading-6 text-[#657168]">Software engineering roles, web and mobile product development, meaningful technical collaborations and challenging product problems.</p>
+          </div>
+        </aside>
+        <section className="editorial-card p-6 sm:p-8">
+          <p className="eyebrow">Send a message</p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[#17231c]">Tell me what you&apos;re working on.</h2>
+          <p className="mb-7 mt-2 text-sm leading-6 text-[#78837b]">Share a little context and I&apos;ll get back to you.</p>
           <Form />
-        </motion.div>
+        </section>
       </div>
     </div>
   );
