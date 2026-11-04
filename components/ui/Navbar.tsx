@@ -12,27 +12,34 @@ const routes = [
 
 export const NavbarSection = () => {
   const pathname = usePathname();
+
   return (
-    <nav aria-label="Main navigation" className="site-shell flex h-[72px] items-center justify-between">
-      <Link href="/" className="flex items-center gap-3" aria-label="Salam Sodiq home">
-        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#176b43] text-sm font-bold tracking-tight text-white">SS</span>
-        <span className="text-sm font-bold tracking-tight text-[#17231c]">SALAM SODIQ<span className="ml-1 text-[#176b43]">.</span></span>
+    <nav aria-label="Main navigation" className="site-shell flex h-[68px] min-w-0 items-center justify-between gap-2 sm:h-[76px] sm:gap-4">
+      <Link href="/" className="group flex shrink-0 items-center" aria-label="Sodiq Abdulsalam home">
+        <span className="wordmark text-[13px] font-extrabold tracking-[.16em] text-[#17231c] sm:text-sm">
+          SODIQ<span className="text-[#176b43]">.</span>
+        </span>
       </Link>
-      <div className="flex items-center gap-1 rounded-full border border-[#e5eae5] bg-white p-1">
+
+      <div className="nav-rail flex min-w-0 items-center gap-0.5 rounded-full border border-[#e5eae5] bg-white/85 p-1 sm:gap-1">
         {routes.map((route) => {
-          const active = pathname === route.url;
+          const active = pathname === route.url || (route.url !== "/" && pathname.startsWith(`${route.url}/`));
           return (
-            <Link key={route.url} href={route.url}
+            <Link
+              key={route.url}
+              href={route.url}
               aria-current={active ? "page" : undefined}
-              className={`rounded-full px-3 py-2 text-[11px] font-semibold sm:px-4 sm:text-xs ${active ? "nav-link-active" : "nav-link"}`}>
+              className={`whitespace-nowrap rounded-full px-2 py-2 text-[10px] font-semibold transition-colors sm:px-4 sm:text-xs ${active ? "nav-link-active" : "nav-link"}`}
+            >
               {route.label}
             </Link>
           );
         })}
       </div>
-      <div className="flex items-center gap-2">
+
+      <div className="flex shrink-0 items-center gap-2">
         <ThemeToggle />
-        <a href="mailto:devyinka8380@gmail.com" className="hidden items-center gap-2 text-xs font-semibold text-[#176b43] sm:inline-flex">
+        <a href="mailto:devyinka8380@gmail.com" className="hidden items-center gap-1.5 text-xs font-semibold text-[#176b43] transition hover:text-[#105234] lg:inline-flex">
           Let&apos;s talk <span aria-hidden="true">↗</span>
         </a>
       </div>
